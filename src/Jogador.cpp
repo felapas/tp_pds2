@@ -19,12 +19,23 @@ std::string Jogador::getNome() const {
 std::string Jogador::getApelido() const {
     return _apelido;
 }
-
+std::map<std::string,int> Jogador::getVitorias() const {
+    return _vitorias;
+}
+std::map<std::string,int> Jogador::getDerrotas() const {
+    return _derrotas;
+}
 void Jogador::adicionarVitoria(const std::string& jogo) {
     _vitorias[jogo]++;
 }
 void Jogador::adicionarDerrota(const std::string& jogo) {
     _derrotas[jogo]++;
+}
+void Jogador::setVitorias(std::string jogo, int numVitorias){
+    _vitorias.insert({jogo ,numVitorias});
+}
+void Jogador::setDerrotas(std::string jogo, int numDerrotas){
+    _vitorias.insert({jogo ,numDerrotas});
 }
 
 void Jogador::mostrarEstatisticas() const {
