@@ -1,19 +1,25 @@
+#ifndef JOGADOR_H
+#define JOGADOR_H
+
+
 #include <iostream>
+#include <map>
 
 
 class Jogador {
     private:
-        std::string nome;
-        std::string apelido;
-        int vitorias;
-        int derrotas;
+        std::string _nome;
+        std::string _apelido;
+        int _vitorias;
+        int _derrotas;
 
     public:
-        Jogador(const std::string& nome, const std::string& apelido);
-
+        Jogador(const std::string& _nome, const std::string& _apelido);
         std::string getNome() const;
         std::string getApelido() const;
         void adicionarVitoria(const std::string& jogo);
         void adicionarDerrota(const std::string& jogo);
         void mostrarEstatisticas() const;
 };
+
+#endif
