@@ -4,8 +4,12 @@
 
 Jogador::Jogador(const std::string& nome, const std::string& apelido) 
 : _nome(nome), _apelido(apelido) {
-    _vitorias = 0;
-    _derrotas = 0;
+    _vitorias["REVERSI"] = 0;
+    _vitorias["LIG4"] = 0;
+    _vitorias["VELHA"] = 0;
+    _derrotas["REVERSI"] = 0;
+    _derrotas["LIG4"] = 0;
+    _derrotas["VELHA"] = 0;
 }
 
 std::string Jogador::getNome() const {
@@ -17,12 +21,17 @@ std::string Jogador::getApelido() const {
 }
 
 void Jogador::adicionarVitoria(const std::string& jogo) {
-    _vitorias++;
+    _vitorias[jogo]++;
 }
 void Jogador::adicionarDerrota(const std::string& jogo) {
-    _derrotas++;
+    _derrotas[jogo]++;
 }
+
 void Jogador::mostrarEstatisticas() const {
-    std::cout << this->_nome << " " << this->_apelido << " ";
-    std::cout << this->_vitorias << this->_derrotas << " ";
-} 
+    std::cout << "Apelido: " << _apelido << " | Nome: " << _nome << std::endl;
+
+    for (const auto& [jogo, vitorias] : _vitorias) {
+        int derrotas = _derrotas.count(jogo) ? _derrotas.at(jogo) : 0;
+        std::cout << jogo << " - V: " << vitorias << " D: " << derrotas << std::endl;
+    }
+}

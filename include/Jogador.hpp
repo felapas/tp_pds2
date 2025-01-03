@@ -3,6 +3,7 @@
 
 
 #include <iostream>
+#include <string>
 #include <map>
 
 
@@ -10,8 +11,8 @@ class Jogador {
     private:
         std::string _nome;
         std::string _apelido;
-        int _vitorias;
-        int _derrotas;
+        std::map<std::string,int> _vitorias;
+        std::map<std::string,int> _derrotas;
 
     public:
         Jogador(const std::string& _nome, const std::string& _apelido);
