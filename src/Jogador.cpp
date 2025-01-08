@@ -34,8 +34,8 @@ void Jogador::adicionarDerrota(const std::string& jogo) {
 void Jogador::setVitorias(std::string jogo, int numVitorias){
     _vitorias.insert({jogo ,numVitorias});
 }
-void Jogador::setDerrotas(std::string jogo, int numDerrotas){
-    _vitorias.insert({jogo ,numDerrotas});
+void Jogador::setDerrotas(std::string jogo, int numDerrotas) {
+    _derrotas[jogo] = numDerrotas;
 }
 
 void Jogador::mostrarEstatisticas() const {

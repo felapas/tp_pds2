@@ -15,6 +15,7 @@ class Jogador {
         std::map<std::string,int> _derrotas;
 
     public:
+        Jogador() = default;
         Jogador(const std::string& _nome, const std::string& _apelido);
 
         std::string getNome() const;

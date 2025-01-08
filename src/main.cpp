@@ -1,23 +1,24 @@
 #include <iostream>
 #include "Jogador.hpp"
+#include "Cadastro.hpp"
 
 int main() {
     // Para ler entrada e saída dos usuários
     std::string entrada;
     // Sistema de cadastro de clientes
-    Cadastro::Cadastro sistema;
+    Cadastro sistema;
 
 
-    while (cin >> entrada) {
+    while (std::cin >> entrada) {
         // Entradas para o sistema de cadastro de clientes
         if (entrada == "CJ") {
             std::string nome, apelido;
-            cin >> nome >> apelido;
+            std::cin >> nome >> apelido;
             sistema.cadastrarJogador(nome, apelido);
         }
         if (entrada == "RJ") {
             std::string apelido;
-            cin >> apelido;
+            std::cin >> apelido;
             sistema.removerJogador(apelido);
         }
         if (entrada == "LJ") {

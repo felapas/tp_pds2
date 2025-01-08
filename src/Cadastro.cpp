@@ -1,6 +1,8 @@
 #include "Cadastro.hpp"
 #include <iostream>
 #include <fstream>
+#include <sstream>
+
 
 void Cadastro::cadastrarJogador(const std::string& nome, const std::string& apelido) {
     if (_jogadores.find(apelido) != _jogadores.end()) {
@@ -36,57 +38,65 @@ void Cadastro::listarJogadores() {
     }
 }
 
-bool Cadastro::salvarEmArquivo(){
+bool Cadastro::salvarEmArquivo() {
     std::ofstream out(_arquivo, std::fstream::out);
     if (!out.is_open()) {
         std::cout << "ERRO: falha ao abrir o arquivo" << std::endl;
         return false;
     }
 
-    for (auto it = _jogadores.begin(); it != _jogadores.end(); it++) {
-        out << it->second.getNome() << " " << it->second.getApelido() << " ";
-        
-        auto vitorias = it->second.getVitorias();
-        auto derrotas = it->second.getDerrotas();
+    for (const auto& [apelido, jogador] : _jogadores) {
+        out << jogador.getNome() << " " << jogador.getApelido() << "\n";
 
-        for (auto it_vitorias = vitorias.begin(); it_vitorias != vitorias.end(); it_vitorias++) {
-            out << it_vitorias->first << " " << it_vitorias->second << " ";
+        auto vitorias = jogador.getVitorias();
+        auto derrotas = jogador.getDerrotas();
+
+        for (const auto& [jogo, num] : vitorias) {
+            out << "V " << jogo << " " << num << "\n";
         }
-        for (auto it_derrotas = derrotas.begin(); it_derrotas != derrotas.end(); it_derrotas++) {
-            out << it_derrotas->first << " " << it_derrotas->second << " ";
+        for (const auto& [jogo, num] : derrotas) {
+            out << "D " << jogo << " " << num << "\n";
         }
+        out << "---\n"; 
     }
 
     out.close();
+    return true;
 }
-bool Cadastro::carregarDeArquivo(){
+bool Cadastro::carregarDeArquivo() {
     std::ifstream in(_arquivo, std::fstream::in);
     if (!in.is_open()) {
         std::cout << "ERRO: falha ao abrir o arquivo" << std::endl;
         return false;
     }
     
-    std::string entrada;
-    while (in >> entrada) {
+    std::string linha;
+    while (std::getline(in, linha)) {
+        if (linha == "---") continue; 
+
+        std::istringstream ss(linha);
         std::string nome, apelido;
-        in >> nome >> apelido;
-        Jogador jogador(nome,apelido);
+        ss >> nome >> apelido;
 
-        for (int i = 0; i < 3; i++) {
+        Jogador jogador(nome, apelido);
+
+        while (std::getline(in, linha) && linha != "---") {
+            std::istringstream ss(linha);
+            char tipo; 
             std::string jogo;
-            int n_vitorias;
-            in >> jogo >> n_vitorias;
-            jogador.setVitorias(jogo, n_vitorias);
-        }
-        for (int i = 0; i < 3; i++) {
-            std::string jogo;
-            int n_derrotas;
-            in >> jogo >> n_derrotas;
-            jogador.setVitorias(jogo, n_derrotas);
+            int num;
+
+            ss >> tipo >> jogo >> num;
+            if (tipo == 'V') {
+                jogador.setVitorias(jogo, num);
+            } else if (tipo == 'D') {
+                jogador.setDerrotas(jogo, num);
+            }
         }
 
-        _jogadores.insert({apelido,jogador});
+        _jogadores[apelido] = jogador;
     }
 
     in.close();
+    return true;
 }
