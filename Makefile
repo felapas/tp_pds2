@@ -1,6 +1,6 @@
 # Compilador
 CXX = g++
-CXXFLAGS = -std=c++17 -Wall
+CXXFLAGS = -std=c++11 -Wall
 
 # Estrutura de diretórios
 SRC_DIR = src
