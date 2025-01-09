@@ -7,12 +7,13 @@
 
 class JogoDaVelha : public Jogo {
 private:
-    tabuleiro(3, 3);
+    Tabuleiro tabuleiro; 
 public:
-    JogoDaVelha() : Jogo("JogoDaVelha") {}
+    JogoDaVelha() : Jogo("JogoDaVelha"), tabuleiro(3, 3) {}
+
     void lerJogada(int linha, int coluna) override;
-    void validarJogada() override;
+    void validarJogada(int linha, int coluna) override;
     void validarVitoria() override;
-}
+};
 
 #endif
