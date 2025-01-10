@@ -4,7 +4,7 @@ CXXFLAGS = -std=c++11 -Wall
 
 # Estrutura de diretórios
 SRC_DIR = src
-OBJ_DIR = build
+OBJ_DIR = obj
 BIN_DIR = bin
 INC_DIR = include
 

@@ -17,7 +17,8 @@ class Tabuleiro{
         void exibirTabuleiro() const;
 
         char getPosicao(int linha, int coluna) const;
-
+        void setPosicao(int linha, int coluna, char simbolo);
+        
         bool posicaoValida(int linha, int coluna) const;
 
 };

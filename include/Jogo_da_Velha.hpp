@@ -3,17 +3,18 @@
 
 #include <iostream>
 #include "Jogo.hpp"
-#include "Tabuleiro.hpp"
 
 class JogoDaVelha : public Jogo {
 private:
-    Tabuleiro tabuleiro; 
-public:
-    JogoDaVelha() : Jogo("JogoDaVelha"), tabuleiro(3, 3) {}
+    int jogadorAtual;
 
-    void lerJogada(int linha, int coluna) override;
-    void validarJogada(int linha, int coluna) override;
-    void validarVitoria() override;
+public:
+    JogoDaVelha();
+
+    void iniciar() override;
+    void lerJogada(int& linha, int& coluna) override;
+    bool validarJogada(int linha, int coluna) override;
+    bool validarVitoria() override;
 };
 
 #endif

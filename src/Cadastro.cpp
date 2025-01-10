@@ -12,6 +12,7 @@ void Cadastro::cadastrarJogador(const std::string& nome, const std::string& apel
         _jogadores[apelido] = Jogador(nome, apelido);
         std::cout << "Jogador " << apelido << " cadastrado com sucesso!" << std::endl;
     }
+    
 }
 
 bool Cadastro::removerJogador(const std::string& apelido) {
@@ -40,6 +41,7 @@ void Cadastro::listarJogadores() {
 
 bool Cadastro::salvarEmArquivo() {
     std::ofstream out(_arquivo, std::fstream::out);
+    std::cout << "Salvando o Arquivo: " <<_arquivo << std::endl;//PARA TESTE
     if (!out.is_open()) {
         std::cout << "ERRO: falha ao abrir o arquivo" << std::endl;
         return false;
@@ -65,6 +67,7 @@ bool Cadastro::salvarEmArquivo() {
 }
 bool Cadastro::carregarDeArquivo() {
     std::ifstream in(_arquivo, std::fstream::in);
+    std::cout << " Carregando o Arquivo: " <<_arquivo << std::endl; //PARA TESTE
     if (!in.is_open()) {
         std::cout << "ERRO: falha ao abrir o arquivo" << std::endl;
         return false;
