@@ -6,8 +6,8 @@ JogoDaVelha::JogoDaVelha() : Jogo("Jogo da Velha", 3, 3), jogadorAtual(1) {}
 // Inicia o jogo
 void JogoDaVelha::iniciar() {
     std::cout << "Bem-vindo ao Jogo da Velha!" << std::endl;
-    tabuleiro = Tabuleiro(3, 3); // Reinicia o tabuleiro
-    jogadorAtual = 1;            // Jogador 1 começa
+    tabuleiro = Tabuleiro(3, 3);
+    jogadorAtual = 1;            
 }
 
 // Lê uma jogada do jogador
@@ -17,6 +17,10 @@ void JogoDaVelha::lerJogada(int& linha, int& coluna) {
 
     linha--;
     coluna--;
+}
+
+int JogoDaVelha::getJogadorAtual(){
+    return jogadorAtual;
 }
 
 

@@ -1,13 +1,16 @@
 #include <iostream>
 #include "Jogador.hpp"
 #include "Cadastro.hpp"
+#include "Connect4.hpp"
 #include "Jogo_da_Velha.hpp"
+#include "GerenciadorDeJogos.hpp"
 
 int main() {
     // Para ler entrada e saída dos usuários
     std::string entrada;
     // Sistema de cadastro de clientes
     Cadastro sistema;
+    GerenciadorDeJogos gerenciador(sistema);
     sistema.carregarDeArquivo();
     std::cout << "Olá! Este é o Menu, escolha o que deseja fazer: " << std::endl 
     << "[CJ] - cadastrar um jogador" <<std::endl << "[RJ] - remover um jogador" <<std::endl
@@ -45,23 +48,38 @@ int main() {
             std::cin >> opcao;
 
             if (opcao == 1) {
-                JogoDaVelha jogo;
+                if (gerenciador.selecionarJogadores()) {
+                    JogoDaVelha jogo;
+                    gerenciador.executarJogo(jogo);
+            }
+            if (opcao == 2) {
+                Connect4 jogo;
                 jogo.iniciar();
 
                 while (true) {
                     jogo.exibirTabuleiro();
-                    int linha, coluna;
+                    int coluna;
 
                     do {
-                        jogo.lerJogada(linha, coluna);
-                    } while (!jogo.validarJogada(linha, coluna));
+                        std::cout << "Insira a coluna para realizar sua jogada: ";
+                        std::cin >> coluna;
+
+                        // Ajusta a entrada para índice (0-based)
+                        coluna--;
+
+                    } 
+                    while (!jogo.validarJogada(coluna));
 
                     if (jogo.validarVitoria()) {
-                        jogo.exibirTabuleiro();
-                        break;
-                    }
+                    jogo.exibirTabuleiro();
+                    std::cout << "Fim de jogo!" << std::endl;
+                    break;
                 }
-            } else {
+              }
+}
+            
+            
+            else {
                 std::cout << "Opção inválida ou jogo não implementado.\n";
             }
         }
@@ -75,4 +93,5 @@ int main() {
     sistema.salvarEmArquivo();
 
     return 0;
+        }    
 }

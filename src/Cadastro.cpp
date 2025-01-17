@@ -15,6 +15,10 @@ void Cadastro::cadastrarJogador(const std::string& nome, const std::string& apel
     
 }
 
+std::map<std::string, Jogador>& Cadastro::getJogadores() {
+    return _jogadores;
+}
+
 bool Cadastro::removerJogador(const std::string& apelido) {
     if(_jogadores.erase(apelido)) {
         std::cout << "Jogador \"" << apelido << "\" removido com sucesso!\n";

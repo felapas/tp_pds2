@@ -14,8 +14,12 @@ public:
         : nomeJogo(nome), tabuleiro(linhas, colunas) {}
 
     virtual void iniciar() = 0;
-    virtual void lerJogada(int& linha, int& coluna) = 0;
-    virtual bool validarJogada(int linha, int coluna) = 0;
+    virtual void lerJogada(int& linha, int& coluna);
+    virtual void lerJogada(int& coluna);
+
+    virtual bool validarJogada(int linha, int coluna);
+    virtual bool validarJogada(int coluna);
+    
     virtual bool validarVitoria() = 0;
 
     void exibirTabuleiro() const {

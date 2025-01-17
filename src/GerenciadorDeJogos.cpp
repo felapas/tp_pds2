@@ -1,0 +1,64 @@
+#include "GerenciadorDeJogos.hpp"
+
+// Construtor que recebe o sistema de cadastro
+GerenciadorDeJogos::GerenciadorDeJogos(Cadastro& cadastro) : cadastro(cadastro), jogador1(nullptr), jogador2(nullptr) {}
+
+// Seleciona os jogadores para a partida
+bool GerenciadorDeJogos::selecionarJogadores() {
+    std::string apelido1, apelido2;
+    std::cout << "Digite o apelido do jogador 1: ";
+    std::cin >> apelido1;
+    std::cout << "Digite o apelido do jogador 2: ";
+    std::cin >> apelido2;
+
+    std::map<std::string, Jogador>& jogadores = cadastro.getJogadores();
+
+    // Verifica se os jogadores existem no cadastro
+    if (jogadores.find(apelido1) != jogadores.end() && jogadores.find(apelido2) != jogadores.end()) {
+        jogador1 = &jogadores[apelido1];
+        jogador2 = &jogadores[apelido2];
+        return true;
+    } else {
+        std::cout << "Um ou ambos os jogadores não foram encontrados no cadastro!" << std::endl;
+        return false;
+    }
+}
+
+// Executa o jogo e atualiza estatísticas
+void GerenciadorDeJogos::executarJogo(JogoDaVelha& jogo) {
+    if (!jogador1 || !jogador2) {
+        std::cout << "Jogadores não selecionados! Selecione jogadores antes de iniciar o jogo." << std::endl;
+        return;
+    }
+
+    jogo.iniciar();
+    while (true) {
+        jogo.exibirTabuleiro();
+        int linha, coluna;
+
+        do {
+            jogo.lerJogada(linha, coluna);
+        } while (!jogo.validarJogada(linha, coluna));
+
+        if (jogo.validarVitoria()) {
+            jogo.exibirTabuleiro();
+            // Atualiza estatísticas do vencedor
+            std::string vencedorApelido = (jogo.getJogadorAtual() == 2) ? jogador1->getApelido() : jogador2->getApelido();
+            atualizarEstatisticas(vencedorApelido, "Jogo da Velha");
+            break;
+        }
+    }
+}
+
+// Atualiza as estatísticas do vencedor e do perdedor
+void GerenciadorDeJogos::atualizarEstatisticas(const std::string& vencedorApelido, const std::string& jogo) {
+    if (jogador1->getApelido() == vencedorApelido) {
+        jogador1->adicionarVitoria(jogo);
+        jogador2->adicionarDerrota(jogo);
+    } else {
+        jogador2->adicionarVitoria(jogo);
+        jogador1->adicionarDerrota(jogo);
+    }
+
+    std::cout << "Estatísticas atualizadas!" << std::endl;
+}

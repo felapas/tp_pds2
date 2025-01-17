@@ -15,6 +15,7 @@ public:
     void lerJogada(int& linha, int& coluna) override;
     bool validarJogada(int linha, int coluna) override;
     bool validarVitoria() override;
+    int getJogadorAtual();
 };
 
 #endif
