@@ -14,7 +14,11 @@ void JogoDaVelha::iniciar() {
 void JogoDaVelha::lerJogada(int& linha, int& coluna) {
     std::cout << "Jogador " << jogadorAtual << ", insira sua jogada (linha e coluna): ";
     std::cin >> linha >> coluna;
+
+    linha--;
+    coluna--;
 }
+
 
 // Valida se a jogada é válida
 bool JogoDaVelha::validarJogada(int linha, int coluna) {

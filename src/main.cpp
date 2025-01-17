@@ -9,13 +9,18 @@ int main() {
     // Sistema de cadastro de clientes
     Cadastro sistema;
     sistema.carregarDeArquivo();
-    
+    std::cout << "Olá! Este é o Menu, escolha o que deseja fazer: " << std::endl 
+    << "[CJ] - cadastrar um jogador" <<std::endl << "[RJ] - remover um jogador" <<std::endl
+    << "[LJ] - listar jogadores" <<std::endl << "[EP] - escolher algum jogo para jogar!" <<std::endl ;
 
     while (std::cin >> entrada) {
         // Entrada que cadastra os jogadores
         if (entrada == "CJ") {
             std::string nome, apelido;
-            std::cin >> nome >> apelido;
+            std::cout<< "Insira o nome do jogador: ";
+            std::cin >> nome;
+            std::cout<< "Insita o apelido do jogador: ";
+            std::cin >> apelido;
             sistema.cadastrarJogador(nome, apelido);
         }
         // Entrada que remove algum jogador
@@ -61,11 +66,12 @@ int main() {
             }
         }
 
-        // Finaliza o programa
-        if (entrada == "FS") 
+            // Finaliza o programa
+        if (entrada == "FS"){
+            sistema.salvarEmArquivo();
             break;
+        }
     }
-
     sistema.salvarEmArquivo();
 
     return 0;
