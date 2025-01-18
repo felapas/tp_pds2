@@ -4,7 +4,6 @@
 #include "Connect4.hpp"
 #include "Jogo_da_Velha.hpp"
 #include "GerenciadorDeJogos.hpp"
-
 int main() {
     // Para ler entrada e saída dos usuários
     std::string entrada;
@@ -14,7 +13,7 @@ int main() {
     sistema.carregarDeArquivo();
     std::cout << "Olá! Este é o Menu, escolha o que deseja fazer: " << std::endl 
     << "[CJ] - cadastrar um jogador" <<std::endl << "[RJ] - remover um jogador" <<std::endl
-    << "[LJ] - listar jogadores" <<std::endl << "[EP] - escolher algum jogo para jogar!" <<std::endl ;
+    << "[LJ] - listar jogadores" <<std::endl << "[EP] - escolher algum jogo para jogar!" <<std::endl;
 
     while (std::cin >> entrada) {
         // Entrada que cadastra os jogadores
@@ -41,7 +40,7 @@ int main() {
         if (entrada == "EP") {
             std::cout << "Escolha um jogo:\n";
             std::cout << "1 - Jogo da Velha\n";
-            std::cout << "2 - Lig4 (indisponível no momento)\n";
+            std::cout << "2 - Lig4\n";
             std::cout << "3 - Reversi (indisponível no momento)\n";
             
             int opcao;
@@ -89,5 +88,4 @@ int main() {
             break;
         }
     }
-    sistema.salvarEmArquivo();
 }

@@ -15,12 +15,12 @@ class Cadastro{
         bool removerJogador(const std::string& apelido);
         void listarJogadores();
 
-       
+    
         std::map<std::string, Jogador>& getJogadores();
 
 
-        
-        bool salvarEmArquivo(); 
+        //Controle de arquivo
+        bool salvarEmArquivo();
         bool carregarDeArquivo();
 };
 

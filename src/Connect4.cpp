@@ -33,13 +33,16 @@ bool Connect4::validarJogada(int coluna) {
     }
     for (int linha = 5; linha >= 0; --linha) {
         if (tabuleiro.getPosicao(linha, coluna) == ' ') {
-            char simbolo = (jogadorAtual == 1) ? '◼︎' : 'O';
+            char simbolo = (jogadorAtual == 1) ? 'X' : 'O';
             tabuleiro.setPosicao(linha, coluna, simbolo);
             jogadorAtual = (jogadorAtual == 1) ? 2 : 1; 
             return true;
         }
     };
-}
+
+    return false;
+};
+
 bool Connect4::validarJogada(int linha , int coluna) {
     if (coluna < 0 || coluna >= 7) {
         std::cout << "Coluna inválida! Escolha uma entre 1 e 7." << std::endl;
@@ -51,12 +54,14 @@ bool Connect4::validarJogada(int linha , int coluna) {
     }
     for (int linha = 5; linha >= 0; --linha) {
         if (tabuleiro.getPosicao(linha, coluna) == ' ') {
-            char simbolo = (jogadorAtual == 1) ? '●' : 'O';
+            char simbolo = (jogadorAtual == 1) ? 'X' : 'O';
             tabuleiro.setPosicao(linha, coluna, simbolo);
             jogadorAtual = (jogadorAtual == 1) ? 2 : 1; 
             return true;
         }
     };
+
+    return false
 }
 
 bool Connect4::validarVitoria() {

@@ -8,7 +8,6 @@ class Jogo {
 protected:
     const std::string nomeJogo;
     Tabuleiro tabuleiro;
-
 public:
     Jogo(const std::string& nome, int linhas, int colunas)
         : nomeJogo(nome), tabuleiro(linhas, colunas) {}

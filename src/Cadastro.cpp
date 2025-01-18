@@ -3,16 +3,13 @@
 #include <fstream>
 #include <sstream>
 
-
 void Cadastro::cadastrarJogador(const std::string& nome, const std::string& apelido) {
     if (_jogadores.find(apelido) != _jogadores.end()) {
         std::cout << "ERRO: jogador repetido" << std::endl;
-    }
-    else {
+    } else {
         _jogadores[apelido] = Jogador(nome, apelido);
         std::cout << "Jogador " << apelido << " cadastrado com sucesso!" << std::endl;
     }
-    
 }
 
 std::map<std::string, Jogador>& Cadastro::getJogadores() {
@@ -20,11 +17,10 @@ std::map<std::string, Jogador>& Cadastro::getJogadores() {
 }
 
 bool Cadastro::removerJogador(const std::string& apelido) {
-    if(_jogadores.erase(apelido)) {
+    if (_jogadores.erase(apelido)) {
         std::cout << "Jogador \"" << apelido << "\" removido com sucesso!\n";
         return true;
-    }
-    else{
+    } else {
         std::cout << "ERRO: jogador inexistente.\n";
         return false;
     }
@@ -37,49 +33,50 @@ void Cadastro::listarJogadores() {
     }
 
     std::cout << "Jogadores cadastrados:\n";
-    for (const auto& [apelido, jogador] : _jogadores) {
+    for (std::map<std::string, Jogador>::const_iterator it = _jogadores.begin(); it != _jogadores.end(); ++it) {
+        const Jogador& jogador = it->second;
         jogador.mostrarEstatisticas();
         std::cout << std::endl;
     }
 }
 
 bool Cadastro::salvarEmArquivo() {
-    std::ofstream out(_arquivo, std::fstream::out);
-    std::cout << "Salvando o Arquivo: " <<_arquivo << std::endl;//PARA TESTE
+    std::ofstream out(_arquivo);
     if (!out.is_open()) {
         std::cout << "ERRO: falha ao abrir o arquivo" << std::endl;
         return false;
     }
 
-    for (const auto& [apelido, jogador] : _jogadores) {
+    for (std::map<std::string, Jogador>::const_iterator it = _jogadores.begin(); it != _jogadores.end(); ++it) {
+        const Jogador& jogador = it->second;
         out << jogador.getNome() << " " << jogador.getApelido() << "\n";
 
-        auto vitorias = jogador.getVitorias();
-        auto derrotas = jogador.getDerrotas();
+        const std::map<std::string, int>& vitorias = jogador.getVitorias();
+        const std::map<std::string, int>& derrotas = jogador.getDerrotas();
 
-        for (const auto& [jogo, num] : vitorias) {
-            out << "V " << jogo << " " << num << "\n";
+        for (std::map<std::string, int>::const_iterator vit = vitorias.begin(); vit != vitorias.end(); ++vit) {
+            out << "V " << vit->first << " " << vit->second << "\n";
         }
-        for (const auto& [jogo, num] : derrotas) {
-            out << "D " << jogo << " " << num << "\n";
+        for (std::map<std::string, int>::const_iterator der = derrotas.begin(); der != derrotas.end(); ++der) {
+            out << "D " << der->first << " " << der->second << "\n";
         }
-        out << "---\n"; 
+        out << "---\n";
     }
 
     out.close();
     return true;
 }
+
 bool Cadastro::carregarDeArquivo() {
-    std::ifstream in(_arquivo, std::fstream::in);
-    std::cout << " Carregando o Arquivo: " <<_arquivo << std::endl; //PARA TESTE
+    std::ifstream in(_arquivo);
     if (!in.is_open()) {
         std::cout << "ERRO: falha ao abrir o arquivo" << std::endl;
         return false;
     }
-    
+
     std::string linha;
     while (std::getline(in, linha)) {
-        if (linha == "---") continue; 
+        if (linha == "---") continue;
 
         std::istringstream ss(linha);
         std::string nome, apelido;
@@ -89,7 +86,7 @@ bool Cadastro::carregarDeArquivo() {
 
         while (std::getline(in, linha) && linha != "---") {
             std::istringstream ss(linha);
-            char tipo; 
+            char tipo;
             std::string jogo;
             int num;
 
