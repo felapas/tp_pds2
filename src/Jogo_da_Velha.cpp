@@ -18,6 +18,10 @@ void JogoDaVelha::lerJogada(int& linha, int& coluna) {
     linha--;
     coluna--;
 }
+void JogoDaVelha::lerJogada(int& linha) {
+    std::cout << "Jogador " << jogadorAtual << ", você deve informar a linha e a coluna.";
+}
+
 
 int JogoDaVelha::getJogadorAtual(){
     return jogadorAtual;
@@ -41,6 +45,11 @@ bool JogoDaVelha::validarJogada(int linha, int coluna) {
     tabuleiro.setPosicao(linha, coluna, simbolo); // Atualiza o tabuleiro
     jogadorAtual = (jogadorAtual == 1) ? 2 : 1; // Alterna o jogador
     return true;
+}
+
+// Valida se a jogada é válida
+bool JogoDaVelha::validarJogada(int linha) {
+    return false;
 }
 // Valida se houve vitória ou empate
 bool JogoDaVelha::validarVitoria() {

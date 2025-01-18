@@ -24,6 +24,10 @@ void Reversi::lerJogada(int& linha, int& coluna){
     coluna--;
 }
 
+void Reversi::lerJogada(int& linha) {
+    std::cout << "Jogador " << jogadorAtual << ", você deve informar a linha e a coluna.";
+}
+
 void Reversi::alternarJogador() {
     jogadorAtual = (jogadorAtual == 1) ? 2 : 1;
 }
@@ -85,6 +89,10 @@ bool Reversi::validarJogada(int linha, int coluna) {
 
     return jogadaValida;
 }
+bool Reversi::validarJogada(int linha) {
+    return false;
+}
+
 
 bool Reversi::validarVitoria() {
     // Verifica se há movimentos válidos para ambos os jogadores

@@ -14,8 +14,10 @@ public:
   Reversi();
 
   void iniciar() override;
+  void lerJogada(int& linha) override;
   void lerJogada(int& linha, int& coluna) override;
   void alternarJogador();
+  bool validarJogada(int linha) override;
   bool validarJogada(int linha, int coluna) override;
   bool validarVitoria() override;
 

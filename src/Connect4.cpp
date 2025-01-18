@@ -9,6 +9,12 @@ void Connect4::iniciar() {
     jogadorAtual = 1;
 };
 
+void Connect4::lerJogada(int& linha , int& coluna) {
+    std::cout << "Jogador " << jogadorAtual << ", insira a coluna para sua jogada (1 a 7): ";
+    std::cin >> coluna;
+    coluna--;
+}
+
 
 void Connect4::lerJogada(int& coluna) {
     std::cout << "Jogador " << jogadorAtual << ", insira a coluna para sua jogada (1 a 7): ";
@@ -17,6 +23,24 @@ void Connect4::lerJogada(int& coluna) {
 }
 
 bool Connect4::validarJogada(int coluna) {
+    if (coluna < 0 || coluna >= 7) {
+        std::cout << "Coluna inválida! Escolha uma entre 1 e 7." << std::endl;
+        return false;
+    };
+    if (tabuleiro.getPosicao(0, coluna) != ' ') {
+        std::cout << "Coluna cheia! Escolha outra." << std::endl;
+        return false;
+    }
+    for (int linha = 5; linha >= 0; --linha) {
+        if (tabuleiro.getPosicao(linha, coluna) == ' ') {
+            char simbolo = (jogadorAtual == 1) ? '◼︎' : 'O';
+            tabuleiro.setPosicao(linha, coluna, simbolo);
+            jogadorAtual = (jogadorAtual == 1) ? 2 : 1; 
+            return true;
+        }
+    };
+}
+bool Connect4::validarJogada(int linha , int coluna) {
     if (coluna < 0 || coluna >= 7) {
         std::cout << "Coluna inválida! Escolha uma entre 1 e 7." << std::endl;
         return false;

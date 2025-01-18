@@ -51,6 +51,7 @@ int main() {
                 if (gerenciador.selecionarJogadores()) {
                     JogoDaVelha jogo;
                     gerenciador.executarJogo(jogo);
+                }
             }
             if (opcao == 2) {
                 Connect4 jogo;
@@ -74,11 +75,9 @@ int main() {
                     jogo.exibirTabuleiro();
                     std::cout << "Fim de jogo!" << std::endl;
                     break;
-                }
-              }
-}
-            
-            
+                    }
+                } 
+            }
             else {
                 std::cout << "Opção inválida ou jogo não implementado.\n";
             }
@@ -91,7 +90,4 @@ int main() {
         }
     }
     sistema.salvarEmArquivo();
-
-    return 0;
-        }    
 }

@@ -3,23 +3,40 @@ void Tabuleiro::exibirTabuleiro() const {
     std::cout << "PLAYER - 1 [X]\t PLAYER - 2 [O]\n\n";
 
     for (int i = 0; i < linhas; i++) {
-        std::cout << "\t     |     |     \n\t";
+        // Linha superior das células
+        std::cout << "\t";
+        for (int j = 0; j < colunas; j++) {
+            std::cout << "     ";
+            if (j < colunas - 1) std::cout << "|";
+        }
+        std::cout << "\n\t";
 
+        // Linha com os valores das células
         for (int j = 0; j < colunas; j++) {
             std::cout << "  " << matriz[i][j] << "  ";
             if (j < colunas - 1) std::cout << "|";
         }
-
         std::cout << "\n";
 
+        // Linha divisória entre as células (exceto na última linha)
         if (i < linhas - 1) {
-            std::cout << "\t_____|_____|_____\n";
-        } else {
-            std::cout << "\t     |     |     \n";
+            std::cout << "\t";
+            for (int j = 0; j < colunas; j++) {
+                std::cout << "_____";
+                if (j < colunas - 1) std::cout << "|";
+            }
+            std::cout << "\n";
         }
     }
-}
 
+    // Linha inferior do tabuleiro
+    std::cout << "\t";
+    for (int j = 0; j < colunas; j++) {
+        std::cout << "     ";
+        if (j < colunas - 1) std::cout << "|";
+    }
+    std::cout << "\n";
+}
 char Tabuleiro::getPosicao(int linha, int coluna) const {
     return matriz[linha][coluna];
 }

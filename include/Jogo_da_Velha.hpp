@@ -12,8 +12,10 @@ public:
     JogoDaVelha();
 
     void iniciar() override;
+    void lerJogada(int& linha) override;
     void lerJogada(int& linha, int& coluna) override;
     bool validarJogada(int linha, int coluna) override;
+    bool validarJogada(int linha) override;
     bool validarVitoria() override;
     int getJogadorAtual();
 };
