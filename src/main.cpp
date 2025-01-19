@@ -42,7 +42,7 @@ int main() {
             std::cout << "Escolha um jogo:\n";
             std::cout << "1 - Jogo da Velha\n";
             std::cout << "2 - Connect4\n";
-            std::cout << "3 - Reversi (indisponível no momento)\n";
+            std::cout << "3 - Reversi\n";
             
             int opcao;
             std::cin >> opcao;
