@@ -1,6 +1,5 @@
 #include "Reversi.hpp"
 
-
 Reversi::Reversi() : Jogo("Reversi", 8, 8), jogadorAtual(1) {}
 
 void Reversi::iniciar() {
@@ -8,29 +7,46 @@ void Reversi::iniciar() {
     tabuleiro = Tabuleiro(8, 8);
     jogadorAtual = 1;
 
-    // Posiciona as peças iniciais
+    // Configuração inicial
     tabuleiro.setPosicao(3, 3, 'O');
     tabuleiro.setPosicao(3, 4, 'X');
     tabuleiro.setPosicao(4, 3, 'X');
     tabuleiro.setPosicao(4, 4, 'O');
 
-    while (!validarVitoria()) {
-        exibirTabuleiro();
+    while (true) {
+        tabuleiro.exibirTabuleiro();
+
+        // Verificar se há jogadas válidas para o jogador atual
+        if (!temJogadaValida()) {
+            std::cout << "Jogador " << jogadorAtual << " não tem movimentos válidos.\n";
+            alternarJogador(); // Passa para o próximo jogador
+
+            // Se nenhum jogador puder jogar, encerra o jogo
+            if (!temJogadaValida()) {
+                validarVitoria(); // Determina o vencedor e encerra o jogo
+                break;
+            }
+            continue; // Pule para o próximo turno
+        }
+
+        // Ler jogada
         int linha, coluna;
         lerJogada(linha, coluna);
+
+        // Validar e executar a jogada
         if (validarJogada(linha, coluna)) {
+            tabuleiro.setPosicao(linha, coluna, (jogadorAtual == 1 ? 'X' : 'O'));
             alternarJogador();
         }
     }
 }
 
-
-void Reversi::lerJogada(int& linha, int& coluna){
+void Reversi::lerJogada(int& linha, int& coluna) {
     std::cout << "Jogador " << jogadorAtual << ", insira sua jogada (linha e coluna): ";
     std::cin >> linha >> coluna;
 
-//ajuste para indices iniciando em 0
-    linha --;
+    // Ajuste para índices iniciando em 0
+    linha--;
     coluna--;
 }
 
@@ -76,12 +92,6 @@ void Reversi::capturarPecas(int linha, int coluna, int deltaLinha, int deltaColu
     }
 }
 
-
-bool Reversi::validarJogada(int linha) {
-    return false;
-}
-
-
 bool Reversi::validarJogada(int linha, int coluna) {
     if (!tabuleiro.posicaoValida(linha, coluna) || tabuleiro.getPosicao(linha, coluna) != ' ') {
         std::cout << "Jogada inválida! Tente novamente." << std::endl;
@@ -118,45 +128,52 @@ bool Reversi::validarJogada(int linha, int coluna) {
     return jogadaValida;
 }
 
+bool Reversi::validarJogada(int linha) {
+    return false;
+}
+
+bool Reversi::temJogadaValida() const {
+    for (int i = 0; i < 8; ++i) {
+        for (int j = 0; j < 8; ++j) {
+            if (tabuleiro.getPosicao(i, j) == ' ' && validarJogada(i, j)) {
+                return true; // Encontrou uma jogada válida
+            }
+        }
+    }
+    return false; // Nenhuma jogada válida encontrada
+}
+
 bool Reversi::validarVitoria() {
     // Verifica se há movimentos válidos para ambos os jogadores
-    bool jogadaValidaEncontrada = false;
     for (int i = 0; i < 8; ++i) {
         for (int j = 0; j < 8; ++j) {
             if (tabuleiro.getPosicao(i, j) == ' ') {
-                if (validarJogada(i, j)) {
-                    jogadaValidaEncontrada = true;
-                    break;
-                }
+                return false; // Ainda há movimentos possíveis
             }
         }
     }
 
-    if (!jogadaValidaEncontrada) {
-        // Não há mais movimentos válidos para nenhum jogador, finaliza o jogo
-        int contagemX = 0, contagemO = 0;
-        for (int i = 0; i < 8; ++i) {
-            for (int j = 0; j < 8; ++j) {
-                if (tabuleiro.getPosicao(i, j) == 'X') contagemX++;
-                if (tabuleiro.getPosicao(i, j) == 'O') contagemO++;
-            }
+    // Calcula o número de peças de cada jogador
+    int contagemX = 0, contagemO = 0;
+    for (int i = 0; i < 8; ++i) {
+        for (int j = 0; j < 8; ++j) {
+            if (tabuleiro.getPosicao(i, j) == 'X') contagemX++;
+            if (tabuleiro.getPosicao(i, j) == 'O') contagemO++;
         }
-
-        std::cout << "Fim do jogo!" << std::endl;
-        std::cout << "Jogador 1 (X): " << contagemX << " peças" << std::endl;
-        std::cout << "Jogador 2 (O): " << contagemO << " peças" << std::endl;
-
-        if (contagemX > contagemO) {
-            std::cout << "Jogador 1 venceu!" << std::endl;
-        } else if (contagemO > contagemX) {
-            std::cout << "Jogador 2 venceu!" << std::endl;
-        } else {
-            std::cout << "Empate!" << std::endl;
-        }
-        return true;
     }
 
-    return false;
+    std::cout << "Fim do jogo!" << std::endl;
+    std::cout << "Jogador 1 (X): " << contagemX << " peças" << std::endl;
+    std::cout << "Jogador 2 (O): " << contagemO << " peças" << std::endl;
+
+    if (contagemX > contagemO) {
+        std::cout << "Jogador 1 venceu!" << std::endl;
+    } else if (contagemO > contagemX) {
+        std::cout << "Jogador 2 venceu!" << std::endl;
+    } else {
+        std::cout << "Empate!" << std::endl;
+    }
+    return true;
 }
 
 int Reversi::getJogadorAtual() {
