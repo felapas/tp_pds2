@@ -8,6 +8,7 @@ class Reversi : public Jogo {
 private:
    int jogadorAtual;
    bool podeCapturar(int linha, int coluna, int deltaLinha, int deltaColuna) const;
+   bool temJogadaValida() const;
    void capturarPecas(int linha, int coluna, int deltaLinha, int deltaColuna);
 
 public:
