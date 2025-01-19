@@ -7,35 +7,17 @@ void Reversi::iniciar() {
     tabuleiro = Tabuleiro(8, 8);
     jogadorAtual = 1;
 
-    // Configuração inicial
+    // Posiciona as peças iniciais
     tabuleiro.setPosicao(3, 3, 'O');
     tabuleiro.setPosicao(3, 4, 'X');
     tabuleiro.setPosicao(4, 3, 'X');
     tabuleiro.setPosicao(4, 4, 'O');
 
-    while (true) {
-        tabuleiro.exibirTabuleiro();
-
-        // Verificar se há jogadas válidas para o jogador atual
-        if (!temJogadaValida()) {
-            std::cout << "Jogador " << jogadorAtual << " não tem movimentos válidos.\n";
-            alternarJogador(); // Passa para o próximo jogador
-
-            // Se nenhum jogador puder jogar, encerra o jogo
-            if (!temJogadaValida()) {
-                validarVitoria(); // Determina o vencedor e encerra o jogo
-                break;
-            }
-            continue; // Pule para o próximo turno
-        }
-
-        // Ler jogada
+    while (!validarVitoria()) {
+        exibirTabuleiro();
         int linha, coluna;
         lerJogada(linha, coluna);
-
-        // Validar e executar a jogada
         if (validarJogada(linha, coluna)) {
-            tabuleiro.setPosicao(linha, coluna, (jogadorAtual == 1 ? 'X' : 'O'));
             alternarJogador();
         }
     }
@@ -130,17 +112,6 @@ bool Reversi::validarJogada(int linha, int coluna) {
 
 bool Reversi::validarJogada(int linha) {
     return false;
-}
-
-bool Reversi::temJogadaValida() {
-    for (int i = 0; i < 8; ++i) {
-        for (int j = 0; j < 8; ++j) {
-            if (tabuleiro.getPosicao(i, j) == ' ' && validarJogada(i, j)) {
-                return true; // Encontrou uma jogada válida
-            }
-        }
-    }
-    return false; // Nenhuma jogada válida encontrada
 }
 
 bool Reversi::validarVitoria() {
