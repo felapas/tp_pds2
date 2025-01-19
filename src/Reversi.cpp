@@ -132,7 +132,7 @@ bool Reversi::validarJogada(int linha) {
     return false;
 }
 
-bool Reversi::temJogadaValida() const {
+bool Reversi::temJogadaValida() {
     for (int i = 0; i < 8; ++i) {
         for (int j = 0; j < 8; ++j) {
             if (tabuleiro.getPosicao(i, j) == ' ' && validarJogada(i, j)) {
