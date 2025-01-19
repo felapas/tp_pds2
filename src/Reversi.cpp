@@ -76,6 +76,12 @@ void Reversi::capturarPecas(int linha, int coluna, int deltaLinha, int deltaColu
     }
 }
 
+
+bool Reversi::validarJogada(int linha) {
+    return false;
+}
+
+
 bool Reversi::validarJogada(int linha, int coluna) {
     if (!tabuleiro.posicaoValida(linha, coluna) || tabuleiro.getPosicao(linha, coluna) != ' ') {
         std::cout << "Jogada inválida! Tente novamente." << std::endl;
