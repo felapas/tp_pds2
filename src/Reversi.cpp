@@ -24,10 +24,6 @@ void Reversi::lerJogada(int& linha, int& coluna){
     coluna--;
 }
 
-void Reversi::lerJogada(int& linha) {
-    std::cout << "Jogador " << jogadorAtual << ", você deve informar a linha e a coluna.";
-}
-
 void Reversi::alternarJogador() {
     jogadorAtual = (jogadorAtual == 1) ? 2 : 1;
 }
