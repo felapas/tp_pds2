@@ -8,12 +8,22 @@ void Reversi::iniciar() {
     tabuleiro = Tabuleiro(8, 8);
     jogadorAtual = 1;
 
-    //posicoes iniciais
+    // Posiciona as peças iniciais
     tabuleiro.setPosicao(3, 3, 'O');
     tabuleiro.setPosicao(3, 4, 'X');
     tabuleiro.setPosicao(4, 3, 'X');
     tabuleiro.setPosicao(4, 4, 'O');
+
+    while (!validarVitoria()) {
+        exibirTabuleiro();
+        int linha, coluna;
+        lerJogada(linha, coluna);
+        if (validarJogada(linha, coluna)) {
+            alternarJogador();
+        }
+    }
 }
+
 
 void Reversi::lerJogada(int& linha, int& coluna){
     std::cout << "Jogador " << jogadorAtual << ", insira sua jogada (linha e coluna): ";
@@ -77,18 +87,31 @@ bool Reversi::validarJogada(int linha, int coluna) {
         for (int deltaColuna = -1; deltaColuna <= 1; ++deltaColuna) {
             if (deltaLinha == 0 && deltaColuna == 0) continue;
             if (podeCapturar(linha, coluna, deltaLinha, deltaColuna)) {
-                capturarPecas(linha, coluna, deltaLinha, deltaColuna);
                 jogadaValida = true;
             }
         }
     }
 
-    if (!jogadaValida) {
+    if (jogadaValida) {
+        char simboloAtual = (jogadorAtual == 1) ? 'X' : 'O';
+        tabuleiro.setPosicao(linha, coluna, simboloAtual); // Adiciona a peça na posição
+
+        // Captura peças do oponente em todas as direções válidas
+        for (int deltaLinha = -1; deltaLinha <= 1; ++deltaLinha) {
+            for (int deltaColuna = -1; deltaColuna <= 1; ++deltaColuna) {
+                if (deltaLinha == 0 && deltaColuna == 0) continue;
+                if (podeCapturar(linha, coluna, deltaLinha, deltaColuna)) {
+                    capturarPecas(linha, coluna, deltaLinha, deltaColuna);
+                }
+            }
+        }
+    } else {
         std::cout << "Nenhuma peça capturada. Jogada inválida!" << std::endl;
     }
 
     return jogadaValida;
 }
+
 bool Reversi::validarJogada(int linha) {
     return false;
 }
