@@ -24,6 +24,7 @@ public:
     void exibirTabuleiro() const {
         tabuleiro.exibirTabuleiro();
     }
+    virtual int getJogadorAtual() = 0;
 
     virtual ~Jogo() = default;
 };

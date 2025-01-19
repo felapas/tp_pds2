@@ -4,6 +4,8 @@
 #include "Cadastro.hpp"
 #include "Jogador.hpp"
 #include "Jogo_Da_Velha.hpp"
+#include "Connect4.hpp"
+#include "Reversi.hpp"
 #include <string>
 
 class GerenciadorDeJogos {
@@ -16,8 +18,8 @@ public:
     GerenciadorDeJogos(Cadastro& cadastro);
 
     bool selecionarJogadores();
-    void executarJogo(JogoDaVelha& jogo);
     void atualizarEstatisticas(const std::string& vencedorApelido, const std::string& jogo);
+    void executarJogo(Jogo* jogo, int opcao);
 };
 
 #endif

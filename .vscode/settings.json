@@ -52,7 +52,10 @@
     "ratio": "cpp",
     "iomanip": "cpp",
     "chrono": "cpp",
-    "cstdarg": "cpp"
+    "cstdarg": "cpp",
+    "cstring": "cpp",
+    "forward_list": "cpp",
+    "list": "cpp"
   },
   "C_Cpp_Runner.cCompilerPath": "gcc",
   "C_Cpp_Runner.cppCompilerPath": "g++",

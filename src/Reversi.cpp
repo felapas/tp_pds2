@@ -124,6 +124,9 @@ bool Reversi::validarVitoria() {
     } else {
         std::cout << "Empate!" << std::endl;
     }
-
     return true;
+}
+
+int Reversi::getJogadorAtual() {
+    return jogadorAtual;
 }

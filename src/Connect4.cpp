@@ -61,7 +61,7 @@ bool Connect4::validarJogada(int linha , int coluna) {
         }
     };
 
-    return false
+    return false;
 }
 
 bool Connect4::validarVitoria() {
@@ -133,4 +133,8 @@ bool Connect4::validarVitoria() {
 
     std::cout << "Empate!" << std::endl;
     return true;
+}
+
+int Connect4::getJogadorAtual() {
+    return jogadorAtual;
 }

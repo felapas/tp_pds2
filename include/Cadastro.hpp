@@ -3,7 +3,6 @@
 
 #include "Jogador.hpp"
 #include <iostream>
-#include <filesystem>
 
 class Cadastro{
     private:

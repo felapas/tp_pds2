@@ -3,6 +3,7 @@
 #include "Cadastro.hpp"
 #include "Connect4.hpp"
 #include "Jogo_da_Velha.hpp"
+#include "Reversi.hpp"
 #include "GerenciadorDeJogos.hpp"
 int main() {
     // Para ler entrada e saída dos usuários
@@ -40,42 +41,16 @@ int main() {
         if (entrada == "EP") {
             std::cout << "Escolha um jogo:\n";
             std::cout << "1 - Jogo da Velha\n";
-            std::cout << "2 - Lig4\n";
+            std::cout << "2 - Connect4\n";
             std::cout << "3 - Reversi (indisponível no momento)\n";
             
             int opcao;
             std::cin >> opcao;
 
-            if (opcao == 1) {
-                if (gerenciador.selecionarJogadores()) {
-                    JogoDaVelha jogo;
-                    gerenciador.executarJogo(jogo);
-                }
-            }
-            if (opcao == 2) {
-                Connect4 jogo;
-                jogo.iniciar();
-
-                while (true) {
-                    jogo.exibirTabuleiro();
-                    int coluna;
-
-                    do {
-                        std::cout << "Insira a coluna para realizar sua jogada: ";
-                        std::cin >> coluna;
-
-                        // Ajusta a entrada para índice (0-based)
-                        coluna--;
-
-                    } 
-                    while (!jogo.validarJogada(coluna));
-
-                    if (jogo.validarVitoria()) {
-                    jogo.exibirTabuleiro();
-                    std::cout << "Fim de jogo!" << std::endl;
-                    break;
-                    }
-                } 
+            Jogo* jogo;
+            if (1 <= opcao <= 3) {
+                gerenciador.selecionarJogadores();
+                gerenciador.executarJogo(jogo, opcao);
             }
             else {
                 std::cout << "Opção inválida ou jogo não implementado.\n";

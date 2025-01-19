@@ -24,27 +24,41 @@ bool GerenciadorDeJogos::selecionarJogadores() {
     }
 }
 
-// Executa o jogo e atualiza estatísticas
-void GerenciadorDeJogos::executarJogo(JogoDaVelha& jogo) {
+// Executa o jogo escolhido e atualiza estatísticas
+void GerenciadorDeJogos::executarJogo(Jogo* jogo, int opcao) {
     if (!jogador1 || !jogador2) {
         std::cout << "Jogadores não selecionados! Selecione jogadores antes de iniciar o jogo." << std::endl;
         return;
     }
+    if (opcao == 1) 
+        jogo = new JogoDaVelha;
+    if (opcao == 2) 
+        jogo = new Connect4;
+    if (opcao == 3) 
+        jogo = new Reversi;
 
-    jogo.iniciar();
+    jogo->iniciar();
     while (true) {
-        jogo.exibirTabuleiro();
+        jogo->exibirTabuleiro();
         int linha, coluna;
 
         do {
-            jogo.lerJogada(linha, coluna);
-        } while (!jogo.validarJogada(linha, coluna));
+            jogo->lerJogada(linha, coluna);
+        } while (!jogo->validarJogada(linha, coluna));
 
-        if (jogo.validarVitoria()) {
-            jogo.exibirTabuleiro();
-            // Atualiza estatísticas do vencedor
-            std::string vencedorApelido = (jogo.getJogadorAtual() == 2) ? jogador1->getApelido() : jogador2->getApelido();
-            atualizarEstatisticas(vencedorApelido, "Jogo da Velha");
+        if (jogo->validarVitoria()) {
+            jogo->exibirTabuleiro();
+            // Atualiza estatísticas do vencedor e do perdedor
+            if (opcao == 1) {
+                std::string vencedorApelido = (jogo->getJogadorAtual() == 2) ? jogador1->getApelido() : jogador2->getApelido();
+                atualizarEstatisticas(vencedorApelido, "VELHA");
+            } else if (opcao == 2) {
+                std::string vencedorApelido = (jogo->getJogadorAtual() == 2) ? jogador1->getApelido() : jogador2->getApelido();
+                atualizarEstatisticas(vencedorApelido, "LIG4");
+            } else if (opcao == 3) {
+                std::string vencedorApelido = (jogo->getJogadorAtual() == 2) ? jogador1->getApelido() : jogador2->getApelido();
+                atualizarEstatisticas(vencedorApelido, "REVERSI");
+            }
             break;
         }
     }

@@ -18,6 +18,7 @@ public:
     bool validarJogada(int linha, int coluna ) override;
     //Valida condições de vítoria após jogada
     bool validarVitoria() override;
+    int getJogadorAtual() override;
 };
 
 #endif

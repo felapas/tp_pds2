@@ -20,7 +20,7 @@ public:
   bool validarJogada(int linha) override;
   bool validarJogada(int linha, int coluna) override;
   bool validarVitoria() override;
-
+  int getJogadorAtual() override;
 };
 
 #endif
