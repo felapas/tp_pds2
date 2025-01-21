@@ -19,7 +19,7 @@ public:
 
     bool selecionarJogadores();
     void atualizarEstatisticas(const std::string& vencedorApelido, const std::string& jogo);
-    void executarJogo(Jogo* jogo, int opcao);
+    void executarJogo(Jogo* jogo, const int& opcao);
 };
 
 #endif

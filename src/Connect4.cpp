@@ -1,25 +1,38 @@
 #include "Connect4.hpp"
 #include <iostream>
 
-Connect4::Connect4() : Jogo("Connect 4", 6, 7), jogadorAtual(1) {};
+Connect4::Connect4() : Jogo("Connect4", 6, 7), jogadorAtual(1) {};
 
 void Connect4::iniciar() {
-    std::cout << "Bem-vindo ao Conncect4" << std::endl;
-    tabuleiro = Tabuleiro(6,7); //
-    jogadorAtual = 1;
+    std::cout << "Bem-vindo ao Connect4" << std::endl;
 };
 
 void Connect4::lerJogada(int& linha , int& coluna) {
     std::cout << "Jogador " << jogadorAtual << ", insira a coluna para sua jogada (1 a 7): ";
-    std::cin >> coluna;
+    std::cin >> linha; // Inutilizada, apenas para manter a assinatura da função, 
+                       // pois o Connect4 não usa linha, apenas coluna
     coluna--;
 }
 
 
 void Connect4::lerJogada(int& coluna) {
-    std::cout << "Jogador " << jogadorAtual << ", insira a coluna para sua jogada (1 a 7): ";
-    std::cin >> coluna;
-    coluna--;
+    std::cout << "Jogador " << jogadorAtual << ", insira a coluna para sua jogada (insira apenas um valor de 1 a 7): ";
+    
+    while (true) {
+        try {
+            std::cin >> coluna;
+            if (std::cin.fail()) {
+                std::cin.clear();
+                std::cin.ignore(32767, '\n');
+                throw (std::invalid_argument("Opção inválida. Digite um valor inteiro.\n"));
+            }
+            coluna--;
+            break;
+        } catch (const std::invalid_argument& e) {
+            std::cout << e.what() << std::endl;
+            continue;
+        }
+    }
 }
 
 bool Connect4::validarJogada(int coluna) {
@@ -43,7 +56,7 @@ bool Connect4::validarJogada(int coluna) {
     return false;
 };
 
-bool Connect4::validarJogada(int linha , int coluna) {
+bool Connect4::validarJogada(int linha , int coluna) { // Também inutilizada, apenas para manter a assinatura da função
     if (coluna < 0 || coluna >= 7) {
         std::cout << "Coluna inválida! Escolha uma entre 1 e 7." << std::endl;
         return false;
@@ -52,7 +65,7 @@ bool Connect4::validarJogada(int linha , int coluna) {
         std::cout << "Coluna cheia! Escolha outra." << std::endl;
         return false;
     }
-    for (int linha = 5; linha >= 0; --linha) {
+    for (linha = 5; linha >= 0; --linha) {
         if (tabuleiro.getPosicao(linha, coluna) == ' ') {
             char simbolo = (jogadorAtual == 1) ? 'X' : 'O';
             tabuleiro.setPosicao(linha, coluna, simbolo);

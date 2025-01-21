@@ -14,10 +14,10 @@ public:
 
     virtual void iniciar() = 0;
     virtual void lerJogada(int& linha, int& coluna) = 0;
-    virtual void lerJogada(int& coluna) = 0;
+    virtual void lerJogada(int& coluna) = 0; // Para o Connect4
 
     virtual bool validarJogada(int linha, int coluna) = 0;
-    virtual bool validarJogada(int coluna) = 0;
+    virtual bool validarJogada(int coluna) = 0; // Para o Connect4
     
     virtual bool validarVitoria() = 0;
 

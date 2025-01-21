@@ -68,7 +68,8 @@ bool Cadastro::salvarEmArquivo() {
 }
 
 bool Cadastro::carregarDeArquivo() {
-    std::ifstream in(_arquivo);
+    std::ifstream in;
+    in.open(_arquivo);
     if (!in.is_open()) {
         std::cout << "ERRO: falha ao abrir o arquivo" << std::endl;
         return false;

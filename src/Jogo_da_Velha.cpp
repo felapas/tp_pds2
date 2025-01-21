@@ -5,18 +5,35 @@ JogoDaVelha::JogoDaVelha() : Jogo("Jogo da Velha", 3, 3), jogadorAtual(1) {}
 
 // Inicia o jogo
 void JogoDaVelha::iniciar() {
-    std::cout << "Bem-vindo ao Jogo da Velha!" << std::endl;
-    tabuleiro = Tabuleiro(3, 3);
-    jogadorAtual = 1;            
+    std::cout << "Bem-vindo ao Jogo da Velha!" << std::endl;    
 }
 
 // Lê uma jogada do jogador
 void JogoDaVelha::lerJogada(int& linha, int& coluna) {
     std::cout << "Jogador " << jogadorAtual << ", insira sua jogada (linha e coluna): ";
-    std::cin >> linha >> coluna;
-
-    linha--;
-    coluna--;
+    
+    while (true) {
+        try {
+            std::cin >> linha;
+            if (std::cin.fail()) {
+                std::cin.clear();
+                std::cin.ignore(32767, '\n');
+                throw (std::invalid_argument("Opção inválida. Digite um valor inteiro para a linha.\n"));
+            }
+            linha--;
+            std::cin >> coluna;
+            if (std::cin.fail()) {
+                std::cin.clear();
+                std::cin.ignore(32767, '\n');
+                throw (std::invalid_argument("Opção inválida. Digite um valor inteiro para a coluna.\n"));
+            }
+            coluna--;
+            break;
+        } catch (const std::invalid_argument& e) {
+            std::cout << e.what() << std::endl;
+            continue;
+        }
+    }
 }
 void JogoDaVelha::lerJogada(int& linha) {
     std::cout << "Jogador " << jogadorAtual << ", você deve informar a linha e a coluna.";

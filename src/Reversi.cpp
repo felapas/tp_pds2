@@ -4,8 +4,6 @@ Reversi::Reversi() : Jogo("Reversi", 8, 8), jogadorAtual(1) {}
 
 void Reversi::iniciar() {
     std::cout << "Bem vindo ao Reversi!" << std::endl;
-    tabuleiro = Tabuleiro(8, 8);
-    jogadorAtual = 1;
 
     // Posiciona as peças iniciais
     tabuleiro.setPosicao(3, 3, 'O');
@@ -25,11 +23,29 @@ void Reversi::iniciar() {
 
 void Reversi::lerJogada(int& linha, int& coluna) {
     std::cout << "Jogador " << jogadorAtual << ", insira sua jogada (linha e coluna): ";
-    std::cin >> linha >> coluna;
-
-    // Ajuste para índices iniciando em 0
-    linha--;
-    coluna--;
+    
+    while (true) {
+        try {
+            std::cin >> linha;
+            if (std::cin.fail()) {
+                std::cin.clear();
+                std::cin.ignore(32767, '\n');
+                throw (std::invalid_argument("Opção inválida. Digite um valor inteiro para a linha.\n"));
+            }
+            linha--;
+            std::cin >> coluna;
+            if (std::cin.fail()) {
+                std::cin.clear();
+                std::cin.ignore(32767, '\n');
+                throw (std::invalid_argument("Opção inválida. Digite um valor inteiro para a coluna.\n"));
+            }
+            coluna--;
+            break;
+        } catch (const std::invalid_argument& e) {
+            std::cout << e.what() << std::endl;
+            continue;
+        }
+    }
 }
 
 void Reversi::lerJogada(int& linha) {

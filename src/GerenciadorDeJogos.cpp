@@ -25,11 +25,12 @@ bool GerenciadorDeJogos::selecionarJogadores() {
 }
 
 // Executa o jogo escolhido e atualiza estatísticas
-void GerenciadorDeJogos::executarJogo(Jogo* jogo, int opcao) {
+void GerenciadorDeJogos::executarJogo(Jogo* jogo, const int& opcao) {
     if (!jogador1 || !jogador2) {
         std::cout << "Jogadores não selecionados! Selecione jogadores antes de iniciar o jogo." << std::endl;
         return;
     }
+
     if (opcao == 1) 
         jogo = new JogoDaVelha;
     if (opcao == 2) 
@@ -42,9 +43,15 @@ void GerenciadorDeJogos::executarJogo(Jogo* jogo, int opcao) {
         jogo->exibirTabuleiro();
         int linha, coluna;
 
-        do {
-            jogo->lerJogada(linha, coluna);
-        } while (!jogo->validarJogada(linha, coluna));
+        if ( (opcao == 1) || (opcao == 3) ) {
+            do {
+                jogo->lerJogada(linha, coluna);
+            } while (!jogo->validarJogada(linha, coluna));
+        } else if (opcao == 2) { // Lê jogadas do Connect4, que são uma coluna apenas
+            do {
+                jogo->lerJogada(coluna);
+            } while (!jogo->validarJogada(coluna));
+        }
 
         if (jogo->validarVitoria()) {
             jogo->exibirTabuleiro();
@@ -73,6 +80,11 @@ void GerenciadorDeJogos::atualizarEstatisticas(const std::string& vencedorApelid
         jogador2->adicionarVitoria(jogo);
         jogador1->adicionarDerrota(jogo);
     }
-
-    std::cout << "Estatísticas atualizadas!" << std::endl;
+        
+    std::cout << "Estatísticas atualizadas!\nO que você deseja fazer agora?" << std::endl
+    << "----------------------------------------------------------" << std::endl << "MENU:" << std::endl
+    << "[CJ] - cadastrar um jogador" <<std::endl << "[RJ] - remover um jogador" <<std::endl
+    << "[LJ] - listar jogadores" <<std::endl << "[EP] - escolher outro jogo para jogar!" <<std::endl
+    << "[FS] - finalizar o programa" << std::endl
+    << "----------------------------------------------------------" << std::endl;
 }
