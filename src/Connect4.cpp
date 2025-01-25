@@ -85,7 +85,7 @@ bool Connect4::validarJogada(int coluna) {
         std::cout << "Coluna cheia! Escolha outra." << std::endl;
         return false;
     }
-    for (int linha = 5; linha >= 0; --linha) {
+    for (int linha = tabuleiro.getLinhas() - 1; linha >= 0; --linha) {
         if (tabuleiro.getPosicao(linha, coluna) == ' ') {
             char simbolo = (jogadorAtual == 1) ? 'X' : 'O';
             tabuleiro.setPosicao(linha, coluna, simbolo);
