@@ -6,7 +6,7 @@
 #include <string>
 #include <map>
 
-
+// Classe que representa um jogador
 class Jogador {
     private:
         std::string _nome;

@@ -4,6 +4,7 @@
 #include <vector>
 #include <iostream>
 
+// Classe que representa o tabuleiro do jogo
 class Tabuleiro{
 
     private:

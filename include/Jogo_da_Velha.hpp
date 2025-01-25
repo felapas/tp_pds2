@@ -4,6 +4,7 @@
 #include <iostream>
 #include "Jogo.hpp"
 
+// Classe que implementa o jogo da velha herdando de Jogo
 class JogoDaVelha : public Jogo {
 private:
     int jogadorAtual;

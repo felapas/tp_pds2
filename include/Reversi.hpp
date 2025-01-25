@@ -4,6 +4,7 @@
 #include <iostream>
 #include "Jogo.hpp"
 
+// Classe que implementa o jogo Reversi herdando de Jogo
 class Reversi : public Jogo {
 private:
    int jogadorAtual;

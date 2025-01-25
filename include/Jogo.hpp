@@ -4,6 +4,7 @@
 #include <iostream>
 #include "Tabuleiro.hpp"
 
+// Classe abstrata que representa um jogo e as operações do jogador
 class Jogo {
 protected:
     const std::string nomeJogo;

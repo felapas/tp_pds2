@@ -4,6 +4,7 @@
 #include "Jogador.hpp"
 #include <iostream>
 
+// Classe que gerencia o sistema de cadastro de jogadores
 class Cadastro{
     private:
         std::map<std::string, Jogador> _jogadores;

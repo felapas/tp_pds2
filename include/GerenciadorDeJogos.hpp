@@ -8,6 +8,7 @@
 #include "Reversi.hpp"
 #include <string>
 
+// Classe que gerencia a execução dos jogos
 class GerenciadorDeJogos {
 private:
     Cadastro& cadastro; // Referência ao sistema de cadastro

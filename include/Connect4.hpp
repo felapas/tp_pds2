@@ -4,6 +4,7 @@
 #include <iostream>
 #include "Jogo.hpp"
 
+// Classe que implementa o jogo Connect4 herdando de Jogo
 class Connect4 : public Jogo {
 private:
     int jogadorAtual;   //Indica o jogador que está jogando
