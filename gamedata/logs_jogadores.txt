@@ -1,5 +1,5 @@
 Caio caioba
-V LIG4 0
+V LIG4 1
 V REVERSI 0
 V VELHA 0
 D LIG4 0
@@ -18,7 +18,7 @@ emanuel manu
 V LIG4 0
 V REVERSI 0
 V VELHA 0
-D LIG4 0
+D LIG4 1
 D REVERSI 0
 D VELHA 0
 ---
