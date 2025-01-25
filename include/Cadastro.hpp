@@ -14,6 +14,8 @@ class Cadastro{
         bool removerJogador(const std::string& apelido);
         void listarJogadores();
 
+        std::string getArquivo() const { return _arquivo; }
+
     
         std::map<std::string, Jogador>& getJogadores();
 

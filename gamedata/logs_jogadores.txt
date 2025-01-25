@@ -1,5 +1,5 @@
 Caio caioba
-V LIG4 1
+V LIG4 0
 V REVERSI 0
 V VELHA 0
 D LIG4 0
