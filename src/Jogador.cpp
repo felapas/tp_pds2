@@ -1,6 +1,7 @@
 #include "Jogador.hpp"
 #include <iostream>
 
+// Constrói jogador e inicializa um mapa com as vitórias e as derrotas
 Jogador::Jogador(const std::string& nome, const std::string& apelido) 
 : _nome(nome), _apelido(apelido) {
     _vitorias["REVERSI"] = 0;
@@ -27,10 +28,12 @@ std::map<std::string,int> Jogador::getDerrotas() const {
     return _derrotas;
 }
 
+// Adiciona vitória ao jogador no jogo em questão
 void Jogador::adicionarVitoria(const std::string& jogo) {
     _vitorias[jogo]++;
 }
 
+// Adiciona derrota ao jogador no jogo em questão
 void Jogador::adicionarDerrota(const std::string& jogo) {
     _derrotas[jogo]++;
 }
@@ -43,6 +46,7 @@ void Jogador::setDerrotas(std::string jogo, int numDerrotas) {
     _derrotas[jogo] = numDerrotas;
 }
 
+// Mostra as estatísticas do jogador
 void Jogador::mostrarEstatisticas() const {
     std::cout << "Apelido: " << _apelido << " | Nome: " << _nome << std::endl;
 

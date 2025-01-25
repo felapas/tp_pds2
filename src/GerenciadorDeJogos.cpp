@@ -1,6 +1,6 @@
 #include "GerenciadorDeJogos.hpp"
 
-// Construtor que recebe o sistema de cadastro
+// Construtor do sistema de cadastro
 GerenciadorDeJogos::GerenciadorDeJogos(Cadastro& cadastro) : cadastro(cadastro), jogador1(nullptr), jogador2(nullptr) {}
 
 // Seleciona os jogadores para a partida

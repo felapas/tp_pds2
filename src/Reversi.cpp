@@ -1,5 +1,6 @@
 #include "Reversi.hpp"
 
+// Cosntrutor do Reversi
 Reversi::Reversi() : Jogo("Reversi", 8, 8), jogadorAtual(1) {}
 
 void Reversi::iniciar() {

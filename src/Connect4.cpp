@@ -1,8 +1,10 @@
 #include "Connect4.hpp"
 #include <iostream>
 
+// Construtor da classe Connect4
 Connect4::Connect4() : Jogo("Connect4", 6, 7), jogadorAtual(1) {};
 
+// Inicializa o jogo Connect4 e define o tamanho do tabuleiro
 void Connect4::iniciar() {
     std::cout << "Bem-vindo ao Connect4" << std::endl
     << "Escolha o seu tamanho de tabuleiro (insira um valor de 1 a 7): " << std::endl
@@ -54,7 +56,7 @@ void Connect4::lerJogada(int& linha , int& coluna) {
     coluna--;
 }
 
-
+// Lê a jogada do jogador atual
 void Connect4::lerJogada(int& coluna) {
     std::cout << "Jogador " << jogadorAtual << ", insira a coluna para sua jogada "
     << "(insira apenas um valor de 1 a " << tabuleiro.getColunas() << "): ";
@@ -76,6 +78,7 @@ void Connect4::lerJogada(int& coluna) {
     }
 }
 
+// Valida a jogada do jogador atual e atualiza o tabuleiro
 bool Connect4::validarJogada(int coluna) {
     if ( coluna < 0 || coluna >= tabuleiro.getColunas() ) {
         std::cout << "Coluna inválida! Escolha uma entre 1 e " << tabuleiro.getColunas() << "." << std::endl;
@@ -118,6 +121,7 @@ bool Connect4::validarJogada(int linha , int coluna) { // Também inutilizada, a
     return false;
 }
 
+// Verifica se houve vitória após a última jogada percorrendo o tabuleiro
 bool Connect4::validarVitoria() {
     const int linhas = tabuleiro.getLinhas();
     const int colunas = tabuleiro.getColunas();

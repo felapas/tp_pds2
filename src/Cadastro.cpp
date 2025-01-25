@@ -3,6 +3,7 @@
 #include <fstream>
 #include <sstream>
 
+// Cadasatra jogador e verifica se o apelido já existe
 void Cadastro::cadastrarJogador(const std::string& nome, const std::string& apelido) {
     if (_jogadores.find(apelido) != _jogadores.end()) {
         std::cout << "ERRO: jogador repetido" << std::endl;
@@ -16,6 +17,7 @@ std::map<std::string, Jogador>& Cadastro::getJogadores() {
     return _jogadores;
 }
 
+// Remove jogador e verifica se o jogador existe
 bool Cadastro::removerJogador(const std::string& apelido) {
     if (_jogadores.erase(apelido)) {
         std::cout << "Jogador \"" << apelido << "\" removido com sucesso!\n";
@@ -26,6 +28,7 @@ bool Cadastro::removerJogador(const std::string& apelido) {
     }
 }
 
+// Lista jogadores e verifica se há jogadores cadastrados
 void Cadastro::listarJogadores() {
     if (_jogadores.empty()) {
         std::cout << "Nenhum jogador cadastrado.\n";
@@ -40,6 +43,7 @@ void Cadastro::listarJogadores() {
     }
 }
 
+// Salva em arquivo e verifica se o arquivo foi aberto com sucesso
 bool Cadastro::salvarEmArquivo() {
     std::ofstream out(_arquivo);
     if (!out.is_open()) {
@@ -67,6 +71,7 @@ bool Cadastro::salvarEmArquivo() {
     return true;
 }
 
+// Carrega de arquivo e verifica se o arquivo foi aberto com sucesso
 bool Cadastro::carregarDeArquivo() {
     std::ifstream in;
     in.open(_arquivo);

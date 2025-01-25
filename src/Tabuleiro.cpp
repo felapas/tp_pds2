@@ -1,4 +1,6 @@
 #include "Tabuleiro.hpp"
+
+// Exibe o tabuleiro na tela
 void Tabuleiro::exibirTabuleiro() const {
     std::cout << "PLAYER - 1 [X]\t PLAYER - 2 [O]\n\n";
 
@@ -54,6 +56,7 @@ void Tabuleiro::setPosicao(int linha, int coluna, char simbolo) {
     matriz[linha][coluna] = simbolo; 
 }
 
+// Verifica se a posição está dentro do tabuleiro definido
 bool Tabuleiro::posicaoValida(int linha, int coluna) const {
     return linha >= 0 && linha < linhas && coluna >= 0 && coluna < colunas;
 }

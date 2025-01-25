@@ -11,6 +11,7 @@ class Tabuleiro{
         int colunas;
         std::vector<std::vector<char>> matriz;
     public:
+        // Construtor do tabuleiro
         Tabuleiro(int linhas, int colunas) 
         : linhas(linhas), colunas(colunas), matriz(linhas, std::vector<char>(colunas, ' ')) {}
 

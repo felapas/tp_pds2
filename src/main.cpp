@@ -32,6 +32,7 @@ int main() {
     << "----------------------------------------------------------" << std::endl;
 
     while (true) {
+        // Lê a entrada do usuário e verifica exceções de entradas inválidas
         try {
             std::cin >> entrada;
             verificarEntrada(entrada);
@@ -40,7 +41,7 @@ int main() {
             std::cout << e.what() << std::endl;
             continue;
         }
-        // Entrada que cadastra os jogadores
+        // Cadastra os jogadores
         if (entrada == "CJ") {
             std::string nome, apelido;
             std::cout<< "Insira o nome do jogador: ";
@@ -49,13 +50,13 @@ int main() {
             std::cin >> apelido;
             sistema.cadastrarJogador(nome, apelido);
         }
-        // Entrada que remove algum jogador
+        // Remove algum jogador
         if (entrada == "RJ") {
             std::string apelido;
             std::cin >> apelido;
             sistema.removerJogador(apelido);
         }
-        // Entrada que lista os jogadores
+        // Lista os jogadores
         if (entrada == "LJ") {
             sistema.listarJogadores();
         }

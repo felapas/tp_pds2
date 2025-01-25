@@ -1,6 +1,6 @@
 #include "Jogo_Da_Velha.hpp"
 
-// Construtor
+// Construtor do Jogo da Velha
 JogoDaVelha::JogoDaVelha() : Jogo("Jogo da Velha", 3, 3), jogadorAtual(1) {}
 
 // Inicia o jogo
@@ -35,17 +35,18 @@ void JogoDaVelha::lerJogada(int& linha, int& coluna) {
         }
     }
 }
+
+// Inutilizada, apenas para o caso de uma entrada inválida
 void JogoDaVelha::lerJogada(int& linha) {
     std::cout << "Jogador " << jogadorAtual << ", você deve informar a linha e a coluna.";
 }
-
 
 int JogoDaVelha::getJogadorAtual(){
     return jogadorAtual;
 }
 
 
-// Valida se a jogada é válida
+// Verifica se a jogada é válida e atualiza o tabuleiro
 bool JogoDaVelha::validarJogada(int linha, int coluna) {
     if (!tabuleiro.posicaoValida(linha, coluna)) {
         std::cout << "Posição inválida! Tente novamente." << std::endl;
@@ -64,11 +65,12 @@ bool JogoDaVelha::validarJogada(int linha, int coluna) {
     return true;
 }
 
-// Valida se a jogada é válida
+// Verifica se a jogada é válida
 bool JogoDaVelha::validarJogada(int linha) {
     return false;
 }
-// Valida se houve vitória ou empate
+
+// Valida se houve vitória ou empate percorrendo o tabuleiro, as linhas, as colunas e as diagonais
 bool JogoDaVelha::validarVitoria() {
     // Verifica linhas e colunas
     for (int i = 0; i < 3; ++i) {
