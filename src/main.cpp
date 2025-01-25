@@ -4,7 +4,7 @@
 #include "Jogador.hpp"
 #include "Cadastro.hpp"
 #include "Connect4.hpp"
-#include "Jogo_da_Velha.hpp"
+#include "Jogo_Da_Velha.hpp"
 #include "Reversi.hpp"
 #include "GerenciadorDeJogos.hpp"
 

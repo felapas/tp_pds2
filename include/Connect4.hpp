@@ -14,7 +14,7 @@ public:
 
     //Leitura da jogada
     void lerJogada(int& coluna)override;
-    void lerJogada(int& coluna, int&linha);
+    void lerJogada(int& coluna, int&linha) override;
     
     bool validarJogada(int coluna) override;
     bool validarJogada(int linha, int coluna ) override;
