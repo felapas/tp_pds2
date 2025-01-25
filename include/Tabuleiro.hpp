@@ -16,6 +16,9 @@ class Tabuleiro{
 
         void exibirTabuleiro() const;
 
+        int getLinhas() const;
+        int getColunas() const; // Para usar na configuracao do tabuleiro do Connect4
+
         char getPosicao(int linha, int coluna) const;
         void setPosicao(int linha, int coluna, char simbolo);
         
