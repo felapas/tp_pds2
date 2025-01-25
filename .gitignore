@@ -1,1 +1,43 @@
+# Compiled Object files
 *.o
+*.ko
+*.obj
+*.elf
+
+# Executables
+*.exe
+*.out
+*.app
+*.dll
+*.so
+*.dylib
+*.txt
+
+# Build directories
+obj/
+bin/
+build/
+dist/
+gamedata/
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+*.ilk
+
+# Editor/IDE temporary files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-workspace
+
+# OS generated files
+.DS_Store
+.DS_Store?
+Thumbs.db
+ehthumbs.db
+Desktop.ini
