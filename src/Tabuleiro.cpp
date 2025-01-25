@@ -37,6 +37,15 @@ void Tabuleiro::exibirTabuleiro() const {
     }
     std::cout << "\n";
 }
+
+int Tabuleiro::getLinhas() const {
+    return linhas;
+}
+
+int Tabuleiro::getColunas() const {
+    return colunas;
+}
+
 char Tabuleiro::getPosicao(int linha, int coluna) const {
     return matriz[linha][coluna];
 }
