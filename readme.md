@@ -7,7 +7,7 @@
 Sistema completo para gerenciamento de jogadores e execução de jogos clássicos, desenvolvido em C++11 com documentação Doxygen.
 
 <p align="center">
-  <img src="https://imgur.com/BGipuFX" alt="Menu Do Jogo">
+  <img src="https://i.imgur.com/BGipuFX.png" alt="Menu Do Jogo">
 </p>
 
 ## 📋 Tabela de Conteúdos
