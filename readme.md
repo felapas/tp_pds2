@@ -2,9 +2,9 @@
 
 [![C++ Version](https://img.shields.io/badge/C%2B%2B-11-blue.svg)](https://en.cppreference.com/w/cpp/11)  
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)  
-[![Documentation](https://img.shields.io/badge/Docs-Doxygen-blueviolet)](https://seusite.com/docs)
+[![Documentation](https://img.shields.io/badge/Docs-Doxygen-blueviolet)](https://felapas.github.io/tp_pds2/)
 
-Sistema completo para gerenciamento de jogadores e execução de jogos clássicos, desenvolvido em C++11 com documentação Doxygen.
+Sistema completo para gerenciamento de jogadores e execução de jogos clássicos para projeto final da disciplina Programação e Desenvolvimento de Software II da UFMG, desenvolvido em C++11 com documentação Doxygen.
 
 <p align="center">
   <img src="https://i.imgur.com/BGipuFX.png" alt="Menu Do Jogo">
@@ -98,7 +98,7 @@ doxygen Doxyfile
 
 ## 📚 Documentação
 
-[🔗 Acesse a Documentação Completa](https://aindanaotemkkkk.com/docs)
+[🔗 Acesse a Documentação Completa](https://felapas.github.io/tp_pds2/)
 
 ## 🎯 Dificuldades e Soluções
 
