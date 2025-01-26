@@ -1,0 +1,7 @@
+<map id="Cadastro::carregarDeArquivo" name="Cadastro::carregarDeArquivo">
+<area shape="rect" id="Node000001" title="Carrega os dados dos jogadores de um arquivo." alt="" coords="5,31,196,56"/>
+<area shape="rect" id="Node000002" href="$class_jogador.html#af9d9704bf3834eccf164b06efcf84688" title="Define o número de derrotas do jogador em um jogo específico." alt="" coords="244,5,387,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="196,30,228,26,229,31,196,35"/>
+<area shape="rect" id="Node000003" href="$class_jogador.html#a480d0ecb58d871e49cd64dc754c994c1" title="Define o número de vitórias do jogador em um jogo específico." alt="" coords="247,55,384,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="196,52,231,55,231,61,196,57"/>
+</map>

@@ -1,0 +1,26 @@
+<map id="include/Jogo.hpp" name="include/Jogo.hpp">
+<area shape="rect" id="Node000001" title="Interface base para jogos de tabuleiro." alt="" coords="302,5,422,31"/>
+<area shape="rect" id="Node000002" href="$_connect4_8hpp.html" title="Implementação do jogo Connect 4." alt="" coords="98,79,245,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="317,39,205,81,203,76,315,34"/>
+<area shape="rect" id="Node000007" href="$_jogo__da___velha_8hpp.html" title=" " alt="" coords="272,79,452,105"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="365,46,365,79,360,79,360,46"/>
+<area shape="rect" id="Node000009" href="$_reversi_8hpp.html" title="Implementação do jogo Reversi (também conhecido como Othello)." alt="" coords="547,79,684,105"/>
+<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="420,33,573,76,572,81,419,38"/>
+<area shape="rect" id="Node000003" href="$_gerenciador_de_jogos_8hpp.html" title="Gerenciador de execução de jogos." alt="" coords="256,153,469,178"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="219,108,331,150,329,155,217,113"/>
+<area shape="rect" id="Node000005" href="$main_8cpp.html" title=" " alt="" coords="170,226,266,252"/>
+<area shape="poly" id="edge6_Node000002_Node000005" title=" " alt="" coords="183,119,217,225,212,227,177,120"/>
+<area shape="rect" id="Node000006" href="$_connect4_8cpp.html" title=" " alt="" coords="5,153,130,178"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="143,116,87,154,84,150,140,111"/>
+<area shape="rect" id="Node000004" href="$_gerenciador_de_jogos_8cpp.html" title=" " alt="" coords="291,226,481,252"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="374,192,385,225,380,227,369,194"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="325,188,244,228,242,223,323,183"/>
+<area shape="poly" id="edge8_Node000007_Node000003" title=" " alt="" coords="365,120,365,152,360,152,360,120"/>
+<area shape="poly" id="edge10_Node000007_Node000005" title=" " alt="" coords="306,113,273,130,246,154,235,172,228,191,221,226,216,226,222,190,230,170,241,151,270,126,304,108"/>
+<area shape="rect" id="Node000008" href="$_jogo__da___velha_8cpp.html" title=" " alt="" coords="493,153,650,178"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="413,108,537,150,535,155,411,113"/>
+<area shape="poly" id="edge12_Node000009_Node000003" title=" " alt="" coords="559,112,406,155,405,149,557,107"/>
+<area shape="poly" id="edge14_Node000009_Node000005" title=" " alt="" coords="644,114,657,129,668,146,671,163,664,180,634,201,591,214,539,221,481,224,367,225,280,229,267,231,267,226,279,224,367,220,481,219,538,216,590,208,632,196,660,177,666,163,663,148,653,132,640,117"/>
+<area shape="rect" id="Node000010" href="$_reversi_8cpp.html" title=" " alt="" coords="726,153,839,178"/>
+<area shape="poly" id="edge13_Node000009_Node000010" title=" " alt="" coords="659,109,755,150,753,155,657,114"/>
+</map>

@@ -1,0 +1,13 @@
+<map id="include/Cadastro.hpp" name="include/Cadastro.hpp">
+<area shape="rect" id="Node000001" title="Sistema de gerenciamento de cadastro de jogadores." alt="" coords="52,5,196,31"/>
+<area shape="rect" id="Node000002" href="$_jogador_8hpp.html" title="Representação de um jogador e suas estatísticas." alt="" coords="78,79,169,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="126,31,126,63,121,63,121,31"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,153,77,178"/>
+<area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="110,34,89,54,69,80,56,109,48,138,43,137,51,108,64,78,85,51,107,30"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="180,153,227,178"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="141,30,163,51,183,78,196,108,203,137,198,138,191,109,179,80,159,54,137,34"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="111,107,68,144,65,140,108,103"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="101,153,154,178"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="127,105,129,137,123,137,122,105"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="139,103,181,140,177,144,135,107"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Reversi::Reversi" name="Reversi::Reversi">
+<area shape="rect" id="Node000001" title="Construtor da classe Reversi." alt="" coords="5,5,125,31"/>
+<area shape="rect" id="Node000002" href="$class_jogo.html#ab8d9dbe13515c55c3b7df3391c52ce7a" title="Construtor da classe Jogo." alt="" coords="173,5,258,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="125,16,157,16,157,21,125,21"/>
+</map>

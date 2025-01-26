@@ -1,0 +1,13 @@
+<map id="include/Reversi.hpp" name="include/Reversi.hpp">
+<area shape="rect" id="Node000001" title="Implementação do jogo Reversi (também conhecido como Othello)." alt="" coords="5,5,142,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="50,226,121,252"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,32,64,79,63,115,67,151,80,211,75,212,62,151,58,115,59,79,68,31"/>
+<area shape="rect" id="Node000003" href="$_jogo_8hpp.html" title="Interface base para jogos de tabuleiro." alt="" coords="74,79,148,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="82,30,100,64,95,66,77,32"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="111,105,93,211,88,210,106,105"/>
+<area shape="rect" id="Node000004" href="$_tabuleiro_8hpp.html" title="Representação do tabuleiro de um jogo." alt="" coords="124,153,223,178"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="123,103,155,139,151,142,119,107"/>
+<area shape="poly" id="edge6_Node000004_Node000002" title=" " alt="" coords="160,181,114,219,110,214,157,177"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="145,226,202,252"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="176,179,176,211,171,211,171,179"/>
+</map>

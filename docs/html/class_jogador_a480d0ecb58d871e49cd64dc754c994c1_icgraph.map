@@ -1,0 +1,7 @@
+<map id="Jogador::setVitorias" name="Jogador::setVitorias">
+<area shape="rect" id="Node000001" title="Define o número de vitórias do jogador em um jogo específico." alt="" coords="341,5,478,31"/>
+<area shape="rect" id="Node000002" href="$class_cadastro.html#ab934546bd6f14a3951621118af04b29e" title="Carrega os dados dos jogadores de um arquivo." alt="" coords="103,5,293,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="325,21,293,21,293,16,325,16"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,55,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>

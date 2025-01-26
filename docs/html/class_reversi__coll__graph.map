@@ -1,0 +1,7 @@
+<map id="Reversi" name="Reversi">
+<area shape="rect" id="Node000001" title="Classe que implementa o jogo Reversi." alt="" coords="9,169,75,195"/>
+<area shape="rect" id="Node000002" href="$class_jogo.html" title="Classe abstrata que representa um jogo de tabuleiro." alt="" coords="17,94,67,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="45,135,45,169,39,169,39,135"/>
+<area shape="rect" id="Node000003" href="$class_tabuleiro.html" title="Classe que representa o tabuleiro de um jogo." alt="" coords="5,5,79,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="45,47,45,94,39,94,39,47"/>
+</map>

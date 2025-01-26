@@ -1,0 +1,12 @@
+<map id="src/Jogador.cpp" name="src/Jogador.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="27,5,140,31"/>
+<area shape="rect" id="Node000002" href="$_jogador_8hpp.html" title="Representação de um jogador e suas estatísticas." alt="" coords="81,79,172,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,30,114,64,109,67,88,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,153,77,178"/>
+<area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="83,32,51,138,46,137,78,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="114,107,68,145,65,141,110,103"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="101,153,154,178"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="129,105,130,137,124,137,124,105"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="178,153,224,178"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="141,103,180,140,176,144,137,107"/>
+</map>

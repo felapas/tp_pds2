@@ -1,0 +1,5 @@
+<map id="Cadastro::listarJogadores" name="Cadastro::listarJogadores">
+<area shape="rect" id="Node000001" title="Lista todos os jogadores cadastrados." alt="" coords="5,5,176,31"/>
+<area shape="rect" id="Node000002" href="$class_jogador.html#a7038ab98277d2d694c1ed61e25f53c69" title="Exibe as estatísticas do jogador." alt="" coords="224,5,412,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,16,208,16,208,21,176,21"/>
+</map>

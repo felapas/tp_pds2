@@ -1,0 +1,5 @@
+<map id="Reversi::lerJogada" name="Reversi::lerJogada">
+<area shape="rect" id="Node000001" title="Lê a jogada do jogador atual (versão não utilizada)." alt="" coords="162,5,292,31"/>
+<area shape="rect" id="Node000002" href="$class_reversi.html#aa64b60fad452cf88c95019f930b55405" title="Inicializa o jogo." alt="" coords="5,5,114,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="146,21,114,21,114,16,146,16"/>
+</map>

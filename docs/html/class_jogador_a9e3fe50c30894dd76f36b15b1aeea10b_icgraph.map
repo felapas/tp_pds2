@@ -1,0 +1,7 @@
+<map id="Jogador::getDerrotas" name="Jogador::getDerrotas">
+<area shape="rect" id="Node000001" title="Retorna o mapa de derrotas do jogador." alt="" coords="332,5,475,31"/>
+<area shape="rect" id="Node000002" href="$class_cadastro.html#a1e7f1c517a57f68bcb86004bd4052dd3" title="Salva os dados dos jogadores em um arquivo." alt="" coords="103,5,284,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="316,21,284,21,284,16,316,16"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,55,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>

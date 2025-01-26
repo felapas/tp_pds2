@@ -1,0 +1,7 @@
+<map id="Reversi::validarJogada" name="Reversi::validarJogada">
+<area shape="rect" id="Node000001" title="Valida a jogada do jogador." alt="" coords="5,31,160,56"/>
+<area shape="rect" id="Node000002" href="$class_reversi.html#a20078942360094a7b66be83c558eb408" title="Captura as peças do oponente em uma direção." alt="" coords="208,5,366,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,31,192,27,192,33,160,37"/>
+<area shape="rect" id="Node000003" href="$class_reversi.html#a9ba6847c811bd42ae8ff5639bc412c08" title="Verifica se é possível capturar peças em uma direção." alt="" coords="211,55,363,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="160,50,195,54,195,59,160,55"/>
+</map>

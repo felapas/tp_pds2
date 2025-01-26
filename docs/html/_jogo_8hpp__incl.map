@@ -1,0 +1,10 @@
+<map id="include/Jogo.hpp" name="include/Jogo.hpp">
+<area shape="rect" id="Node000001" title="Interface base para jogos de tabuleiro." alt="" coords="24,5,143,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,153,77,178"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="83,32,51,138,46,137,78,31"/>
+<area shape="rect" id="Node000003" href="$_tabuleiro_8hpp.html" title="Representação do tabuleiro de um jogo." alt="" coords="78,79,177,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="93,30,114,64,110,67,89,33"/>
+<area shape="poly" id="edge4_Node000003_Node000002" title=" " alt="" coords="115,107,69,145,65,141,111,103"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="100,153,158,178"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="131,105,131,137,126,137,125,105"/>
+</map>

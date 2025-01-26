@@ -1,0 +1,5 @@
+<map id="Connect4::Connect4" name="Connect4::Connect4">
+<area shape="rect" id="Node000001" title="Construtor da classe Connect4." alt="" coords="5,5,147,31"/>
+<area shape="rect" id="Node000002" href="$class_jogo.html#ab8d9dbe13515c55c3b7df3391c52ce7a" title="Construtor da classe Jogo." alt="" coords="195,5,280,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="147,16,179,16,179,21,147,21"/>
+</map>

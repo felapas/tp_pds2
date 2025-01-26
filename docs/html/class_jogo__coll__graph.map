@@ -1,0 +1,5 @@
+<map id="Jogo" name="Jogo">
+<area shape="rect" id="Node000001" title="Classe abstrata que representa um jogo de tabuleiro." alt="" coords="17,94,67,120"/>
+<area shape="rect" id="Node000002" href="$class_tabuleiro.html" title="Classe que representa o tabuleiro de um jogo." alt="" coords="5,5,79,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="45,47,45,94,39,94,39,47"/>
+</map>

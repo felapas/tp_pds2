@@ -1,0 +1,47 @@
+<map id="main" name="main">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,467,55,492"/>
+<area shape="rect" id="Node000002" href="$class_cadastro.html#a9d04644c931fdfe3a975762723cfe87b" title="Cadastra um novo jogador no sistema." alt="" coords="107,84,289,110"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="29,466,35,394,48,290,69,188,83,147,101,119,102,117,106,121,105,122,88,149,74,189,53,291,41,395,35,466"/>
+<area shape="rect" id="Node000003" href="$class_cadastro.html#ab934546bd6f14a3951621118af04b29e" title="Carrega os dados dos jogadores de um arquivo." alt="" coords="103,133,293,159"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="32,466,56,383,76,327,100,273,136,216,173,169,177,173,141,219,105,275,80,329,61,384,37,467"/>
+<area shape="rect" id="Node000006" href="$class_gerenciador_de_jogos.html#a791d74108e4121d38d96010f75ed25b8" title="Executa um jogo com base na opção selecionada." alt="" coords="126,286,270,326"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="42,465,164,336,168,340,46,468"/>
+<area shape="rect" id="Node000014" href="$class_cadastro.html#a4737273729637307973dd857f0321197" title="Lista todos os jogadores cadastrados." alt="" coords="113,441,283,467"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="55,473,97,467,97,472,55,479"/>
+<area shape="rect" id="Node000016" href="$class_cadastro.html#a142c0032a306bb9e693bc7d34f067af4" title="Remove um jogador do sistema." alt="" coords="110,491,286,516"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="55,480,95,486,94,491,55,486"/>
+<area shape="rect" id="Node000017" href="$class_cadastro.html#a1e7f1c517a57f68bcb86004bd4052dd3" title="Salva os dados dos jogadores em um arquivo." alt="" coords="107,540,288,566"/>
+<area shape="poly" id="edge16_Node000001_Node000017" title=" " alt="" coords="48,490,74,509,104,526,118,532,116,537,102,531,71,514,45,495"/>
+<area shape="rect" id="Node000022" href="$class_gerenciador_de_jogos.html#ad7822cc194a9a81d6c595461f472921a" title="Seleciona os jogadores para a partida." alt="" coords="124,590,272,630"/>
+<area shape="poly" id="edge21_Node000001_Node000022" title=" " alt="" coords="40,491,64,533,83,556,104,576,111,581,108,585,101,580,79,560,60,536,35,494"/>
+<area shape="rect" id="Node000023" href="$main_8cpp.html#aecb04727290d9515ca13cc8d054d4551" title=" " alt="" coords="142,655,254,680"/>
+<area shape="poly" id="edge22_Node000001_Node000023" title=" " alt="" coords="36,492,42,523,55,563,75,605,104,640,129,654,126,659,101,644,70,607,50,565,37,524,31,493"/>
+<area shape="rect" id="Node000004" href="$class_jogador.html#af9d9704bf3834eccf164b06efcf84688" title="Define o número de derrotas do jogador em um jogo específico." alt="" coords="364,5,507,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="273,130,291,120,308,101,314,81,322,60,339,40,348,34,351,39,343,44,326,63,320,83,312,104,295,124,276,135"/>
+<area shape="rect" id="Node000005" href="$class_jogador.html#a480d0ecb58d871e49cd64dc754c994c1" title="Define o número de vitórias do jogador em um jogo específico." alt="" coords="366,55,504,80"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="262,130,292,120,316,105,340,90,359,83,361,88,342,95,318,110,294,125,263,135"/>
+<area shape="rect" id="Node000007" href="$class_gerenciador_de_jogos.html#a2308ae225bce09a284643b7cefed33cc" title="Atualiza as estatísticas dos jogadores após uma partida." alt="" coords="362,104,509,145"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="212,284,264,221,299,185,340,155,347,150,350,155,342,159,303,189,267,224,216,287"/>
+<area shape="rect" id="Node000008" href="$class_jogo.html#a6c4643b70e69963b0bdfd11f447a1556" title="Exibe o tabuleiro do jogo." alt="" coords="365,169,505,195"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="221,283,273,243,340,204,354,198,356,203,342,209,276,247,224,288"/>
+<area shape="rect" id="Node000009" href="$class_jogo.html#aea1b8961b1f22d6b75bc030942fe0001" title="Retorna o jogador atual." alt="" coords="360,219,511,244"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="253,283,340,253,363,246,365,251,342,258,255,288"/>
+<area shape="rect" id="Node000010" href="$class_jogo.html#aec1fcd5c1468768ddb96a1eed4bddfbf" title="Inicializa o jogo." alt="" coords="390,268,481,294"/>
+<area shape="poly" id="edge9_Node000006_Node000010" title=" " alt="" coords="269,296,374,285,374,290,270,301"/>
+<area shape="rect" id="Node000011" href="$class_jogo.html#a69eddab5ea1d04b272fc9c66ff809201" title="Lê a jogada do jogador atual." alt="" coords="378,317,492,343"/>
+<area shape="poly" id="edge10_Node000006_Node000011" title=" " alt="" coords="270,311,363,320,363,326,269,316"/>
+<area shape="rect" id="Node000012" href="$class_jogo.html#a4924bccbeab84b79a62cac68f85e0c7a" title="Valida a jogada do jogador." alt="" coords="366,367,504,392"/>
+<area shape="poly" id="edge11_Node000006_Node000012" title=" " alt="" coords="257,325,342,353,365,360,363,365,340,358,255,330"/>
+<area shape="rect" id="Node000013" href="$class_jogo.html#a11ed763aee450a19e2dea705926942a5" title="Verifica se há um vencedor ou empate." alt="" coords="369,416,501,442"/>
+<area shape="poly" id="edge12_Node000006_Node000013" title=" " alt="" coords="225,325,277,364,342,402,356,408,354,413,340,407,274,369,222,329"/>
+<area shape="rect" id="Node000015" href="$class_jogador.html#a7038ab98277d2d694c1ed61e25f53c69" title="Exibe as estatísticas do jogador." alt="" coords="341,465,529,491"/>
+<area shape="poly" id="edge14_Node000014_Node000015" title=" " alt="" coords="283,460,325,464,325,470,283,465"/>
+<area shape="rect" id="Node000018" href="$class_jogador.html#aab1dd73438da8f07e1b9b8b9df0a5eb4" title="Retorna o apelido do jogador." alt="" coords="367,515,503,540"/>
+<area shape="poly" id="edge17_Node000017_Node000018" title=" " alt="" coords="289,540,351,534,352,539,289,546"/>
+<area shape="rect" id="Node000019" href="$class_jogador.html#a9e3fe50c30894dd76f36b15b1aeea10b" title="Retorna o mapa de derrotas do jogador." alt="" coords="364,564,507,590"/>
+<area shape="poly" id="edge18_Node000017_Node000019" title=" " alt="" coords="289,559,348,565,348,571,289,565"/>
+<area shape="rect" id="Node000020" href="$class_jogador.html#a56f68b57e7fb229f932ef60d2116833c" title="Retorna o nome do jogador." alt="" coords="371,613,499,639"/>
+<area shape="poly" id="edge19_Node000017_Node000020" title=" " alt="" coords="257,564,294,576,342,600,361,606,359,611,340,605,292,581,255,569"/>
+<area shape="rect" id="Node000021" href="$class_jogador.html#a18eb0cf907aa920ae6c754054dd43e9d" title="Retorna o mapa de vitórias do jogador." alt="" coords="366,663,504,688"/>
+<area shape="poly" id="edge20_Node000017_Node000021" title=" " alt="" coords="272,564,295,576,312,595,319,614,327,632,343,649,354,656,351,661,339,654,322,635,314,616,307,598,291,580,270,569"/>
+</map>

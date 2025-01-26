@@ -1,0 +1,9 @@
+<map id="Jogo" name="Jogo">
+<area shape="rect" id="Node000001" title="Classe abstrata que representa um jogo de tabuleiro." alt="" coords="131,5,181,31"/>
+<area shape="rect" id="Node000002" href="$class_connect4.html" title="Classe que implementa o jogo Connect 4." alt="" coords="5,79,83,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="126,42,65,81,62,76,123,37"/>
+<area shape="rect" id="Node000003" href="$class_jogo_da_velha.html" title="Classe que implementa o jogo da velha." alt="" coords="106,79,206,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="159,46,159,79,153,79,153,46"/>
+<area shape="rect" id="Node000004" href="$class_reversi.html" title="Classe que implementa o jogo Reversi." alt="" coords="230,79,296,105"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="188,38,246,76,243,81,185,42"/>
+</map>
