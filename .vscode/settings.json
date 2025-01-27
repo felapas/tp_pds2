@@ -56,7 +56,12 @@
     "cstring": "cpp",
     "forward_list": "cpp",
     "list": "cpp",
-    "set": "cpp"
+    "set": "cpp",
+    "condition_variable": "cpp",
+    "csignal": "cpp",
+    "unordered_set": "cpp",
+    "mutex": "cpp",
+    "thread": "cpp"
   },
   "C_Cpp_Runner.cCompilerPath": "gcc",
   "C_Cpp_Runner.cppCompilerPath": "g++",

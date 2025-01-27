@@ -1,4 +1,5 @@
 #include "Connect4.hpp"
+#include "GerenciadorDeJogos.hpp"
 #include <iostream>
 
 // Construtor da classe Connect4
@@ -122,7 +123,7 @@ bool Connect4::validarJogada(int linha , int coluna) { // Também inutilizada, a
 }
 
 // Verifica se houve vitória após a última jogada percorrendo o tabuleiro
-bool Connect4::validarVitoria() {
+int Connect4::validarVitoria() {
     const int linhas = tabuleiro.getLinhas();
     const int colunas = tabuleiro.getColunas();
     char simboloAtual;
@@ -136,7 +137,7 @@ bool Connect4::validarVitoria() {
                 simboloAtual == tabuleiro.getPosicao(i, j + 2) &&
                 simboloAtual == tabuleiro.getPosicao(i, j + 3)) {
                 std::cout << "Jogador " << ((simboloAtual == 'X') ? 1 : 2) << " venceu!" << std::endl;
-                return true;
+                return 1;
             }
         }
     }
@@ -150,7 +151,7 @@ bool Connect4::validarVitoria() {
                 simboloAtual == tabuleiro.getPosicao(i + 2, j) &&
                 simboloAtual == tabuleiro.getPosicao(i + 3, j)) {
                 std::cout << "Jogador " << ((simboloAtual == 'X') ? 1 : 2) << " venceu!" << std::endl;
-                return true;
+                return 1;
             }
         }
     }
@@ -164,7 +165,7 @@ bool Connect4::validarVitoria() {
                 simboloAtual == tabuleiro.getPosicao(i + 2, j + 2) &&
                 simboloAtual == tabuleiro.getPosicao(i + 3, j + 3)) {
                 std::cout << "Jogador " << ((simboloAtual == 'X') ? 1 : 2) << " venceu!" << std::endl;
-                return true;
+                return 1;
             }
         }
     }
@@ -178,19 +179,18 @@ bool Connect4::validarVitoria() {
                 simboloAtual == tabuleiro.getPosicao(i - 2, j + 2) &&
                 simboloAtual == tabuleiro.getPosicao(i - 3, j + 3)) {
                 std::cout << "Jogador " << ((simboloAtual == 'X') ? 1 : 2) << " venceu!" << std::endl;
-                return true;
+                return 1;
             }
         }
     }
         // Verifica empate
     for (int j = 0; j < colunas; ++j) {
         if (tabuleiro.getPosicao(0, j) == ' ') {
-            return false; // Ainda há espaço para jogadas
+            return 0; // Ainda há espaço para jogadas
         }
     }
 
-    std::cout << "Empate!" << std::endl;
-    return true;
+    return 2;
 }
 
 int Connect4::getJogadorAtual() {

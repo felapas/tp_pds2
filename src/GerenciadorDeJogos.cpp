@@ -19,7 +19,13 @@ bool GerenciadorDeJogos::selecionarJogadores() {
         jogador2 = &jogadores[apelido2];
         return true;
     } else {
-        std::cout << "Um ou ambos os jogadores não foram encontrados no cadastro!" << std::endl;
+        std::cout << "Um ou ambos os jogadores não foram encontrados no cadastro! Retornando ao Menu:" << std::endl
+        << "----------------------------------------------------------" << std::endl << "MENU:" << std::endl
+        << "[CJ] - cadastrar um jogador" <<std::endl << "[RJ] - remover um jogador" <<std::endl
+        << "[LJ] - listar jogadores" <<std::endl << "[EP] - escolher outro jogo para jogar!" <<std::endl
+        << "[FS] - finalizar o programa" << std::endl
+        << "----------------------------------------------------------" << std::endl;
+
         return false;
     }
 }
@@ -53,7 +59,8 @@ void GerenciadorDeJogos::executarJogo(Jogo* jogo, const int& opcao) {
             } while (!jogo->validarJogada(coluna));
         }
 
-        if (jogo->validarVitoria()) {
+        int resultado = jogo->validarVitoria();
+        if (resultado == 1) {
             jogo->exibirTabuleiro();
             // Atualiza estatísticas do vencedor e do perdedor
             if (opcao == 1) {
@@ -63,9 +70,19 @@ void GerenciadorDeJogos::executarJogo(Jogo* jogo, const int& opcao) {
                 std::string vencedorApelido = (jogo->getJogadorAtual() == 2) ? jogador1->getApelido() : jogador2->getApelido();
                 atualizarEstatisticas(vencedorApelido, "LIG4");
             } else if (opcao == 3) {
-                std::string vencedorApelido = (jogo->getJogadorAtual() == 2) ? jogador1->getApelido() : jogador2->getApelido();
-                atualizarEstatisticas(vencedorApelido, "REVERSI");
+                std::string vencedorApelido = (jogo->getJogadorAtual() == 2) ? jogador2->getApelido() : jogador1->getApelido();
+                atualizarEstatisticas(vencedorApelido, "REVERSI"); // Pega o apelido do jogador com mais peças
             }
+            break;
+        } else if (resultado == 2) {
+            jogo->exibirTabuleiro();
+            std::cout << "Empate!" << std::endl;
+            std::cout << "Estatísticas mantidas!\nO que você deseja fazer agora?" << std::endl
+            << "----------------------------------------------------------" << std::endl << "MENU:" << std::endl
+            << "[CJ] - cadastrar um jogador" <<std::endl << "[RJ] - remover um jogador" <<std::endl
+            << "[LJ] - listar jogadores" <<std::endl << "[EP] - escolher outro jogo para jogar!" <<std::endl
+            << "[FS] - finalizar o programa" << std::endl
+            << "----------------------------------------------------------" << std::endl;
             break;
         }
     }

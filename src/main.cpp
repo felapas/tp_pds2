@@ -81,8 +81,9 @@ int main() {
 
                     if ( (opcao >= 1) && (opcao <= 3) ) {
                         Jogo* jogo = nullptr;
-                        gerenciador.selecionarJogadores();
-                        gerenciador.executarJogo(jogo, opcao);
+                        if ( gerenciador.selecionarJogadores() ) {
+                            gerenciador.executarJogo(jogo, opcao);
+                        }
                         delete jogo;
                         break; // Sai do loop, pois a entrada foi válida (entre 1 e 3)
                     } else {
