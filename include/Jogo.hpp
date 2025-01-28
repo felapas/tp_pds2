@@ -100,10 +100,11 @@ public:
      * Método puramente virtual que deve ser implementado pelas classes derivadas
      * para verificar se o jogo terminou com uma vitória ou empate.
      * 
-     * @return true Se houver um vencedor ou empate.
-     * @return false Se o jogo deve continuar.
+     * @return 1 Se houve um vencedor.
+     * @return 0 Se o jogo deve continuar.
+     * @return 2 Se houve um empate.
      */
-    virtual bool validarVitoria() = 0;
+    virtual int validarVitoria() = 0;
 
     /**
      * @brief Exibe o tabuleiro do jogo.

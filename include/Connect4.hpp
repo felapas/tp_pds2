@@ -90,10 +90,11 @@ public:
      * Verifica todas as possíveis combinações de quatro peças consecutivas no tabuleiro
      * (horizontal, vertical e diagonal) para determinar se o jogo terminou.
      * 
-     * @return true Se houver um vencedor ou empate.
-     * @return false Se o jogo deve continuar.
+     * @return 1 Se houver um vencedor.
+     * @return 0 Se o jogo deve continuar.
+     * @return 2 Se o jogo terminou em empate.
      */
-    bool validarVitoria() override;
+    int validarVitoria() override;
 
     /**
      * @brief Retorna o jogador atual.

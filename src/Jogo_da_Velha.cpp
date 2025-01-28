@@ -1,4 +1,6 @@
 #include "Jogo_Da_Velha.hpp"
+#include "Jogador.hpp"
+#include "GerenciadorDeJogos.hpp"
 
 // Construtor do Jogo da Velha
 JogoDaVelha::JogoDaVelha() : Jogo("Jogo da Velha", 3, 3), jogadorAtual(1) {}
@@ -71,21 +73,21 @@ bool JogoDaVelha::validarJogada(int linha) {
 }
 
 // Valida se houve vitória ou empate percorrendo o tabuleiro, as linhas, as colunas e as diagonais
-bool JogoDaVelha::validarVitoria() {
+int JogoDaVelha::validarVitoria() {
     // Verifica linhas e colunas
     for (int i = 0; i < 3; ++i) {
         if (tabuleiro.getPosicao(i, 0) == tabuleiro.getPosicao(i, 1) &&
             tabuleiro.getPosicao(i, 1) == tabuleiro.getPosicao(i, 2) &&
             tabuleiro.getPosicao(i, 0) != ' ') {
             std::cout << "Jogador " << ((tabuleiro.getPosicao(i, 0) == 'X') ? 1 : 2) << " venceu!" << std::endl;
-            return true;
+            return 1;
         }
 
         if (tabuleiro.getPosicao(0, i) == tabuleiro.getPosicao(1, i) &&
             tabuleiro.getPosicao(1, i) == tabuleiro.getPosicao(2, i) &&
             tabuleiro.getPosicao(0, i) != ' ') {
             std::cout << "Jogador " << ((tabuleiro.getPosicao(0, i) == 'X') ? 1 : 2) << " venceu!" << std::endl;
-            return true;
+            return 1;
         }
     }
 
@@ -94,25 +96,24 @@ bool JogoDaVelha::validarVitoria() {
         tabuleiro.getPosicao(1, 1) == tabuleiro.getPosicao(2, 2) &&
         tabuleiro.getPosicao(0, 0) != ' ') {
         std::cout << "Jogador " << ((tabuleiro.getPosicao(0, 0) == 'X') ? 1 : 2) << " venceu!" << std::endl;
-        return true;
+        return 1;
     }
 
     if (tabuleiro.getPosicao(0, 2) == tabuleiro.getPosicao(1, 1) &&
         tabuleiro.getPosicao(1, 1) == tabuleiro.getPosicao(2, 0) &&
         tabuleiro.getPosicao(0, 2) != ' ') {
         std::cout << "Jogador " << ((tabuleiro.getPosicao(0, 2) == 'X') ? 1 : 2) << " venceu!" << std::endl;
-        return true;
+        return 1;
     }
 
     // Verifica empate
     for (int i = 0; i < 3; ++i) {
         for (int j = 0; j < 3; ++j) {
             if (tabuleiro.getPosicao(i, j) == ' ') {
-                return false;
+                return 0; // Ainda há espaço para jogadas
             }
         }
     }
 
-    std::cout << "Empate!" << std::endl;
-    return true;
+    return 2;
 }

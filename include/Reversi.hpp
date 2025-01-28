@@ -111,14 +111,15 @@ public:
      * @brief Valida a jogada do jogador.
      * 
      * Verifica se a posição escolhida é válida e se resulta em captura de peças do oponente.
+     * Em caso positivo, realiza alterações no tabuleiro.
      * 
      * @param[in] linha Linha escolhida pelo jogador.
      * @param[in] coluna Coluna escolhida pelo jogador.
-     * @return true Se a jogada é válida.
+     * @return true Se a jogada é válida. Então, captura as peças do oponente na direção que for possível, e muda o jogador atual e preenche o espaço do tabuleiro correspondente.
      * @return false Se a jogada é inválida.
      */
     bool validarJogada(int linha, int coluna) override;
-
+    
     /**
      * @brief Verifica se há um vencedor ou empate.
      * 
@@ -128,7 +129,7 @@ public:
      * @return true Se houver um vencedor ou empate.
      * @return false Se o jogo deve continuar.
      */
-    bool validarVitoria() override;
+    int validarVitoria() override;
 
     /**
      * @brief Retorna o jogador atual.
