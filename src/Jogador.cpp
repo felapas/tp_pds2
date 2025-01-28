@@ -39,7 +39,7 @@ void Jogador::adicionarDerrota(const std::string& jogo) {
 }
 
 void Jogador::setVitorias(std::string jogo, int numVitorias){
-    _vitorias.insert({jogo ,numVitorias});
+    _vitorias[jogo] = numVitorias;
 }
 
 void Jogador::setDerrotas(std::string jogo, int numDerrotas) {
