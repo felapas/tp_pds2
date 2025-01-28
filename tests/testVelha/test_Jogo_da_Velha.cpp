@@ -1,6 +1,6 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
-#include "doctest.h"
-#include "../include/Jogo_Da_Velha.hpp"
+#include "../doctest.h"
+#include "../../include/Jogo_Da_Velha.hpp"
 
 TEST_CASE("Teste do Jogo da Velha") {
     JogoDaVelha jogo;
