@@ -1,5 +1,15 @@
 #include "Tabuleiro.hpp"
 
+// Construtor do tabuleiro
+Tabuleiro::Tabuleiro(int linhas, int colunas) {
+        if (linhas <= 0 || colunas <= 0) {
+            throw std::invalid_argument("Dimensões do tabuleiro devem ser positivas.");
+        }
+        this->linhas = linhas;
+        this->colunas = colunas;
+        matriz = std::vector<std::vector<char>>(linhas, std::vector<char>(colunas, ' '));
+    };
+
 // Exibe o tabuleiro na tela
 void Tabuleiro::exibirTabuleiro() const {
     std::cout << "PLAYER - 1 [X]\t PLAYER - 2 [O]\n\n";

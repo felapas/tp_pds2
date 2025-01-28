@@ -36,8 +36,7 @@ public:
      * @param[in] linhas Número de linhas do tabuleiro.
      * @param[in] colunas Número de colunas do tabuleiro.
      */
-    Tabuleiro(int linhas, int colunas) 
-        : linhas(linhas), colunas(colunas), matriz(linhas, std::vector<char>(colunas, ' ')) {}
+    Tabuleiro(int linhas, int colunas);
 
     /**
      * @brief Exibe o tabuleiro no console.
