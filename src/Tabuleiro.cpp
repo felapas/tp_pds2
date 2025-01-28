@@ -1,5 +1,9 @@
 #include "Tabuleiro.hpp"
 
+#define COR_RESET   "\033[0m"
+#define COR_ROSA "\033[95m"
+#define COR_VERDE    "\033[92m"
+
 // Exibe o tabuleiro na tela
 void Tabuleiro::exibirTabuleiro() const {
     std::cout << "PLAYER - 1 [X]\t PLAYER - 2 [O]\n\n";
@@ -15,7 +19,13 @@ void Tabuleiro::exibirTabuleiro() const {
 
         // Linha com os valores das células
         for (int j = 0; j < colunas; j++) {
-            std::cout << "  " << matriz[i][j] << "  ";
+            if (matriz[i][j] == 'X') {
+                std::cout << "  " << COR_ROSA << matriz[i][j] << COR_RESET << "  ";
+            } else if (matriz[i][j] == 'O') {
+                std::cout << "  " << COR_VERDE << matriz[i][j] << COR_RESET << "  ";
+            } else {
+                std::cout << "  " << matriz[i][j] << "  ";
+            }
             if (j < colunas - 1) std::cout << "|";
         }
         std::cout << "\n";
