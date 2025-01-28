@@ -86,7 +86,7 @@ int main() {
                         delete jogo;
                         break; // Sai do loop, pois a entrada foi válida (entre 1 e 3)
                     } else {
-                        std::cout << "Opção inválida ou jogo não implementado.\n";
+                        std::cout << "Opção inválida.\n";
                     }
                 } catch (const std::invalid_argument& e) {
                     std::cout << e.what() << std::endl;
