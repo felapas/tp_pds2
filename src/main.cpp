@@ -28,7 +28,7 @@ int main() {
     << "Olá! Este é o Menu, escolha o que deseja fazer: " << std::endl 
     << "[CJ] - cadastrar um jogador" <<std::endl << "[RJ] - remover um jogador" <<std::endl
     << "[LJ] - listar jogadores" <<std::endl << "[EP] - escolher algum jogo para jogar!" <<std::endl
-    << "[FS] - finalizar o programa" << std::endl
+    << "[TM] - escolher tema" << std::endl << "[FS] - finalizar o programa" << std::endl
     << "----------------------------------------------------------" << std::endl;
 
     while (true) {
