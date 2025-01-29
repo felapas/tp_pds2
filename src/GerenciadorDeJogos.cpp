@@ -102,6 +102,6 @@ void GerenciadorDeJogos::atualizarEstatisticas(const std::string& vencedorApelid
     << "----------------------------------------------------------" << std::endl << "MENU:" << std::endl
     << "[CJ] - cadastrar um jogador" <<std::endl << "[RJ] - remover um jogador" <<std::endl
     << "[LJ] - listar jogadores" <<std::endl << "[EP] - escolher outro jogo para jogar!" <<std::endl
-    << "[FS] - finalizar o programa" << std::endl
+    << "[TM] - escolher um tema" << std::endl<< "[FS] - finalizar o programa" << std::endl
     << "----------------------------------------------------------" << std::endl;
 }
