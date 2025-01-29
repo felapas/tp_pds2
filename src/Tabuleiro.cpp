@@ -1,4 +1,5 @@
 #include "Tabuleiro.hpp"
+#include <iostream>
 
 // Construtor do tabuleiro
 Tabuleiro::Tabuleiro(int linhas, int colunas) {
@@ -9,16 +10,56 @@ Tabuleiro::Tabuleiro(int linhas, int colunas) {
         this->colunas = colunas;
         matriz = std::vector<std::vector<char>>(linhas, std::vector<char>(colunas, ' '));
     };
+// Inicializa a variável estática
+Tabuleiro::Tema Tabuleiro::temaAtual = Tabuleiro::Tema::Tradicional;
+
+void Tabuleiro::setTema(Tema novoTema) {
+    temaAtual = novoTema;
+}
+
+Tabuleiro::Tema Tabuleiro::getTema() {
+    return temaAtual;
+}
+
 #define COR_RESET   "\033[0m"
-#define COR_ROSA "\033[95m"
+#define COR_VERMELHO "\033[91m"
+#define COR_AZUL     "\033[94m"
+#define COR_ROSA     "\033[95m"
 #define COR_VERDE    "\033[92m"
+#define COR_AMARELO  "\033[93m"
+#define COR_PRETO    "\033[30m"
+#define COR_BRANCO   "\033[97m"
 
 // Exibe o tabuleiro na tela
 void Tabuleiro::exibirTabuleiro() const {
+    std::string corX, corO;
+
+    switch (temaAtual) {
+        case Tema::Tradicional:
+            corX = COR_VERMELHO;
+            corO = COR_AZUL;
+            break;
+        case Tema::Cyberpunk:
+            corX = COR_ROSA;
+            corO = COR_VERDE;
+            break;
+        case Tema::Natal:
+            corX = COR_VERMELHO;
+            corO = COR_VERDE;
+            break;
+        case Tema::Brasil:
+            corX = COR_AMARELO;
+            corO = COR_AZUL;
+            break;
+        case Tema::GaloDoido:
+            corX = COR_BRANCO;
+            corO = COR_PRETO;
+            break;
+    }
+
     std::cout << "PLAYER - 1 [X]\t PLAYER - 2 [O]\n\n";
 
     for (int i = 0; i < linhas; i++) {
-        // Linha superior das células
         std::cout << "\t";
         for (int j = 0; j < colunas; j++) {
             std::cout << "     ";
@@ -26,12 +67,11 @@ void Tabuleiro::exibirTabuleiro() const {
         }
         std::cout << "\n\t";
 
-        // Linha com os valores das células
         for (int j = 0; j < colunas; j++) {
             if (matriz[i][j] == 'X') {
-                std::cout << "  " << COR_ROSA << matriz[i][j] << COR_RESET << "  ";
+                std::cout << "  " << corX << matriz[i][j] << COR_RESET << "  ";
             } else if (matriz[i][j] == 'O') {
-                std::cout << "  " << COR_VERDE << matriz[i][j] << COR_RESET << "  ";
+                std::cout << "  " << corO << matriz[i][j] << COR_RESET << "  ";
             } else {
                 std::cout << "  " << matriz[i][j] << "  ";
             }
@@ -39,7 +79,6 @@ void Tabuleiro::exibirTabuleiro() const {
         }
         std::cout << "\n";
 
-        // Linha divisória entre as células (exceto na última linha)
         if (i < linhas - 1) {
             std::cout << "\t";
             for (int j = 0; j < colunas; j++) {
@@ -50,7 +89,6 @@ void Tabuleiro::exibirTabuleiro() const {
         }
     }
 
-    // Linha inferior do tabuleiro
     std::cout << "\t";
     for (int j = 0; j < colunas; j++) {
         std::cout << "     ";

@@ -3,6 +3,10 @@
 
 #include <vector>
 #include <iostream>
+#include <string>
+
+
+
 
 /**
  * @file Tabuleiro.hpp
@@ -25,8 +29,17 @@ private:
     int linhas; ///< Número de linhas do tabuleiro.
     int colunas; ///< Número de colunas do tabuleiro.
     std::vector<std::vector<char>> matriz; ///< Matriz que representa o tabuleiro.
+    
 
 public:
+
+enum class Tema {
+        Tradicional,
+        Cyberpunk,
+        Natal,
+        Brasil,
+        GaloDoido
+    };
     /**
      * @brief Construtor da classe Tabuleiro.
      * 
@@ -89,6 +102,14 @@ public:
      * @return false Se a posição está fora dos limites do tabuleiro.
      */
     bool posicaoValida(int linha, int coluna) const;
+
+     
+
+    static void setTema(Tema novoTema);
+    static Tema getTema();
+
+private:
+    static Tema temaAtual;
 };
 
 #endif

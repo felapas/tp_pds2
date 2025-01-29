@@ -10,7 +10,7 @@
 
 // Função que verifica se a entrada do usuário é válida
 void verificarEntrada(const std::string& entrada) {
-    const std::set<std::string>entradasValidas = {"CJ", "RJ", "LJ", "EP", "FS"};
+    const std::set<std::string>entradasValidas = {"CJ", "RJ", "LJ", "TM", "EP", "FS"};
 
     if (entradasValidas.find(entrada) == entradasValidas.end()) {
         throw (std::invalid_argument(entrada + ": entrada inválida. Entradas válidas disponíveis no Menu!\n"));
@@ -59,6 +59,40 @@ int main() {
         // Lista os jogadores
         if (entrada == "LJ") {
             sistema.listarJogadores();
+        }
+
+        if(entrada == "TM"){
+            int opcaoTema = 0;
+    std::cout << "----------------------------------------------------------\n";
+    std::cout << "Selecione o tema:\n";
+    std::cout << "1 - Tradicional\n";
+    std::cout << "2 - Cyberpunk\n";
+    std::cout << "3 - Natal\n";
+    std::cout << "4 - Brasil\n";
+    std::cout << "5 - Galo Doido\n";
+    std::cout << "----------------------------------------------------------\n";
+    while (true) {
+        std::cout << "Digite a opção desejada: ";
+        std::cin >> opcaoTema;
+
+        if (std::cin.fail() || opcaoTema < 1 || opcaoTema > 5) {
+            std::cin.clear();
+            std::cin.ignore(32767, '\n');
+            std::cout << "Opção inválida. Tente novamente.\n";
+        } else {
+            break;
+        }
+    }
+
+    switch (opcaoTema) {
+        case 1: Tabuleiro::setTema(Tabuleiro::Tema::Tradicional); break;
+        case 2: Tabuleiro::setTema(Tabuleiro::Tema::Cyberpunk); break;
+        case 3: Tabuleiro::setTema(Tabuleiro::Tema::Natal); break;
+        case 4: Tabuleiro::setTema(Tabuleiro::Tema::Brasil); break;
+        case 5: Tabuleiro::setTema(Tabuleiro::Tema::GaloDoido); break;
+    }
+
+    std::cout << "Tema configurado com sucesso!\n";
         }
 
         // Entrada que executa partida de algum jogo
