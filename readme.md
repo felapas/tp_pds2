@@ -27,6 +27,11 @@ Sistema completo para gerenciamento de jogadores e execução de jogos clássico
 - Listagem detalhada com estatísticas por jogo.
 - Persistência em arquivo texto.
 
+### Seletor de temas
+
+- Cinco temas personalizados
+- Cada tema tem sua cor personalizada
+
 ### 🎲 Jogos Implementados
 
 | Jogo          | Tabuleiro | Modo de Vitória                         | Características Especiais    |
