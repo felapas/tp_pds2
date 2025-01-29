@@ -26,7 +26,7 @@
 class Cadastro {
 private:
     std::map<std::string, Jogador> _jogadores; ///< Mapa de jogadores, indexado por apelido.
-    const std::string _arquivo = "../gamedata/logs_jogadores.txt"; ///< Caminho do arquivo de persistência.
+    std::string _arquivo = "../gamedata/logs_jogadores.txt"; ///< Caminho do arquivo de persistência.
 
 public:
     /**
@@ -103,6 +103,7 @@ public:
      * 
      */
     bool carregarDeArquivo();
+    void setArquivo(const std::string arquivo);
 };
 
 #endif
