@@ -104,6 +104,7 @@ doxygen Doxyfile
 ## 📚 Documentação
 
 [🔗 Acesse a Documentação Completa](https://felapas.github.io/tp_pds2/)
+[🔗 Acesse os cartões CRCs] (https://drive.google.com/file/d/1-WVXUqHAeo9sjuOqbVhF7rxSqzobI_6D/view?usp=share_link)
 
 ## 🎯 Dificuldades e Soluções
 
