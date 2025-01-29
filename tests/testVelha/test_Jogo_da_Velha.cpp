@@ -11,6 +11,7 @@ TEST_CASE("Teste do Jogo da Velha") {
     }
 
     SUBCASE("Teste de Validação de Jogadas") {
+        jogo.iniciar();
         // Jogada válida
         CHECK(jogo.validarJogada(0, 0) == true); // Posição (0, 0) é válida
         CHECK(jogo.getJogadorAtual() == 2); // Jogador alternou para 2
@@ -23,6 +24,7 @@ TEST_CASE("Teste do Jogo da Velha") {
     }
 
     SUBCASE("Teste de Vitória") {
+        jogo.iniciar();
         // Simula uma vitória do jogador 1
         jogo.validarJogada(0, 0); // Jogador 1 marca (0, 0)
         jogo.validarJogada(1, 0); // Jogador 2 marca (1, 0)
@@ -36,15 +38,15 @@ TEST_CASE("Teste do Jogo da Velha") {
     SUBCASE("Teste de Empate") {
         // Simula um empate
         jogo.validarJogada(0, 0); // Jogador 1 marca (0, 0)
-        jogo.validarJogada(0, 1); // Jogador 2 marca (0, 1)
-        jogo.validarJogada(0, 2); // Jogador 1 marca (0, 2)
+        jogo.validarJogada(1, 0); // Jogador 2 marca (0, 1)
+        jogo.validarJogada(0, 1); // Jogador 1 marca (0, 2)
         jogo.validarJogada(1, 1); // Jogador 2 marca (1, 1)
-        jogo.validarJogada(1, 0); // Jogador 1 marca (1, 0)
-        jogo.validarJogada(1, 2); // Jogador 2 marca (1, 2)
+        jogo.validarJogada(1, 2); // Jogador 1 marca (1, 0)
+        jogo.validarJogada(0, 2); // Jogador 2 marca (1, 2)
         jogo.validarJogada(2, 0); // Jogador 1 marca (2, 0)
         jogo.validarJogada(2, 1); // Jogador 2 marca (2, 1)
         jogo.validarJogada(2, 2); // Jogador 1 marca (2, 2)
 
-        CHECK(jogo.validarVitoria() == true); // Empate
+        CHECK(jogo.validarVitoria() == 2); // Empate
     }
 }

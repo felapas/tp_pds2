@@ -1,5 +1,6 @@
 #include "Jogador.hpp"
 #include <iostream>
+#include <stdexcept>
 
 // Constrói jogador e inicializa um mapa com as vitórias e as derrotas
 Jogador::Jogador(const std::string& nome, const std::string& apelido) 
@@ -38,11 +39,17 @@ void Jogador::adicionarDerrota(const std::string& jogo) {
     _derrotas[jogo]++;
 }
 
-void Jogador::setVitorias(std::string jogo, int numVitorias){
-    _vitorias.insert({jogo ,numVitorias});
+void Jogador::setVitorias(const std::string jogo, int numVitorias) {
+    if (numVitorias < 0) {
+        throw std::invalid_argument("Número de vitórias não pode ser negativo.");
+    }
+    _vitorias[jogo] = numVitorias;
 }
 
-void Jogador::setDerrotas(std::string jogo, int numDerrotas) {
+void Jogador::setDerrotas(const std::string jogo, int numDerrotas) {
+    if (numDerrotas < 0) {
+        throw std::invalid_argument("Número de derrotas não pode ser negativo.");
+    }
     _derrotas[jogo] = numDerrotas;
 }
 
