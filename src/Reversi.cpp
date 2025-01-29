@@ -136,20 +136,10 @@ bool Reversi::validarJogada(int linha) {
 }
 
 int Reversi::validarVitoria() {
-    // Dois loops que verificam se há movimentos válidos para ambos os jogadores
-    
-    // Verifica se o tabuleiro está cheio
-    bool tabuleiroCheio = true;
-    for (int i = 0; i < 8; ++i) {
-        for (int j = 0; j < 8; ++j) {
-            if (tabuleiro.getPosicao(i, j) == ' ') {
-                tabuleiroCheio = false; // Ainda há movimentos possíveis
-            }
-        }
-    }
+    bool jogadasPossiveisJogador1 = false;
+    bool jogadasPossiveisJogador2 = false;
 
-    bool jogadasPossiveis = false;
-    // Verifica se há possibilidade de captura de peças
+    // Verifica se há movimentos possíveis para ambos os jogadores
     for (int linha = 0; linha < 8; ++linha) {
         for (int coluna = 0; coluna < 8; ++coluna) {
             if (tabuleiro.getPosicao(linha, coluna) == ' ') {
@@ -157,8 +147,11 @@ int Reversi::validarVitoria() {
                     for (int deltaColuna = -1; deltaColuna <= 1; ++deltaColuna) {
                         if (deltaLinha == 0 && deltaColuna == 0) continue;
                         if (podeCapturar(linha, coluna, deltaLinha, deltaColuna)) {
-                            std::cout << "jogador " << jogadorAtual << " pode capturar peças em: " << linha + 1 << ", " << coluna + 1 << std::endl;
-                            jogadasPossiveis = true;
+                            if (jogadorAtual == 1) {
+                                jogadasPossiveisJogador1 = true;
+                            } else {
+                                jogadasPossiveisJogador2 = true;
+                            }
                         }
                     }
                 }
@@ -166,9 +159,8 @@ int Reversi::validarVitoria() {
         }
     }
 
-    // Em caso de vitória, exibe a mensagem de fim de jogo e checa as peças
-    // Só é possível haver vitória se o tabuleiro estiver cheio ou o jogador atual estiver sem jogadas possíveis
-    if ( !jogadasPossiveis && tabuleiroCheio ) {
+    // Se não houver movimentos possíveis para ambos os jogadores, o jogo termina
+    if (!jogadasPossiveisJogador1 && !jogadasPossiveisJogador2) {
         // Calcula o número de peças de cada jogador
         int contagemX = 0, contagemO = 0;
         for (int i = 0; i < 8; ++i) {
@@ -184,19 +176,18 @@ int Reversi::validarVitoria() {
 
         if (contagemX > contagemO) {
             std::cout << "Jogador 1 venceu!" << std::endl;
-            jogadorAtual = 1;
             return 1;
         } else if (contagemO > contagemX) {
             std::cout << "Jogador 2 venceu!" << std::endl;
-            jogadorAtual = 2;
-            return 1;
+            return 2;
         } else {
-            return 2; // Empate para peças iguais
+            std::cout << "Empate!" << std::endl;
+            return 0;
         }
     }
-    return 0;
-}
 
+    return -1; // O jogo ainda não terminou
+}
 int Reversi::getJogadorAtual() {
     return jogadorAtual;
 }
