@@ -180,10 +180,7 @@ int Reversi::validarVitoria() {
         } else if (contagemO > contagemX) {
             std::cout << "Jogador 2 venceu!" << std::endl;
             return 2;
-        } else {
-            std::cout << "Empate!" << std::endl;
-            return 0;
-        }
+        };
     }
 
     return -1; // O jogo ainda não terminou
